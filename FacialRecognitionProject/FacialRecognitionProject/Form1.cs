@@ -49,8 +49,8 @@ namespace FacialRecognitionProject
                 SslMode = MySqlSslMode.None,
 
                 Server = Environment.GetEnvironmentVariable("34.89.124.128"),   // e.g. '127.0.0.1'
-                UserID = Environment.GetEnvironmentVariable("adenman"),   // e.g. 'my-db-user'
-                Password = Environment.GetEnvironmentVariable("Treclaren01%"), // e.g. 'my-db-password'
+                UserID = Environment.GetEnvironmentVariable("USERNAME"),   // e.g. 'my-db-user'
+                Password = Environment.GetEnvironmentVariable("PASSWORD"), // e.g. 'my-db-password'
                 Database = Environment.GetEnvironmentVariable("COMP3000"), // e.g. 'my-database'
             };
             connectionString.Pooling = true;
