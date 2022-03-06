@@ -22,3 +22,16 @@ D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\F
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.csproj.CopyComplete
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.exe
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.pdb
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\Microsoft.Web.Infrastructure.dll
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.Helpers.dll
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.Mvc.dll
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.Razor.dll
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.WebPages.Deployment.dll
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.WebPages.dll
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.WebPages.Razor.dll
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.Helpers.xml
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.Mvc.xml
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.Razor.xml
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.WebPages.xml
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.WebPages.Deployment.xml
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.WebPages.Razor.xml
