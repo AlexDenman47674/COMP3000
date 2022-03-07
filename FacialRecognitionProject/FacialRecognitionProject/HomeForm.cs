@@ -16,5 +16,11 @@ namespace FacialRecognitionProject
         {
             InitializeComponent();
         }
+
+        private void timerDateTime_Tick(object sender, EventArgs e)
+        {
+            labelCurrentTime.Text = DateTime.Now.ToString("h:mm:ss tt");
+            labelCurrentDate.Text = DateTime.Today.ToString("dd/MM/yyyy");
+        }
     }
 }

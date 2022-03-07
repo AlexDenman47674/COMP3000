@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,8 +39,14 @@
             this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.timerDateTime = new System.Windows.Forms.Timer(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.labelCurrentTime = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelCurrentDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -146,6 +153,10 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labelCurrentDate);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.Controls.Add(this.labelCurrentTime);
+            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(369, 262);
             this.groupBox2.Name = "groupBox2";
@@ -153,6 +164,51 @@
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Home";
+            // 
+            // timerDateTime
+            // 
+            this.timerDateTime.Enabled = true;
+            this.timerDateTime.Tick += new System.EventHandler(this.timerDateTime_Tick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "It is currently";
+            // 
+            // labelCurrentTime
+            // 
+            this.labelCurrentTime.AutoSize = true;
+            this.labelCurrentTime.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentTime.Location = new System.Drawing.Point(134, 36);
+            this.labelCurrentTime.Name = "labelCurrentTime";
+            this.labelCurrentTime.Size = new System.Drawing.Size(121, 37);
+            this.labelCurrentTime.TabIndex = 1;
+            this.labelCurrentTime.Text = "0:00:00 AM";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(249, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 37);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "on";
+            // 
+            // labelCurrentDate
+            // 
+            this.labelCurrentDate.AutoSize = true;
+            this.labelCurrentDate.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentDate.Location = new System.Drawing.Point(283, 36);
+            this.labelCurrentDate.Name = "labelCurrentDate";
+            this.labelCurrentDate.Size = new System.Drawing.Size(68, 37);
+            this.labelCurrentDate.TabIndex = 3;
+            this.labelCurrentDate.Text = "DATE";
             // 
             // HomeForm
             // 
@@ -172,6 +228,8 @@
             this.Text = "Home";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -189,5 +247,10 @@
         private System.Windows.Forms.Button buttonSettings;
         private System.Windows.Forms.Button buttonAbout;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Timer timerDateTime;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label labelCurrentTime;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelCurrentDate;
     }
 }
