@@ -44,6 +44,8 @@
             this.labelCurrentTime = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.labelCurrentDate = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -65,7 +67,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Myanmar Text", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(337, 211);
+            this.label1.Location = new System.Drawing.Point(335, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(334, 48);
             this.label1.TabIndex = 1;
@@ -111,9 +113,9 @@
             this.groupBox1.Controls.Add(this.buttonDatabase);
             this.groupBox1.Controls.Add(this.buttonCamera);
             this.groupBox1.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(54, 262);
+            this.groupBox1.Location = new System.Drawing.Point(54, 215);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(309, 487);
+            this.groupBox1.Size = new System.Drawing.Size(309, 534);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Navigation";
@@ -153,14 +155,16 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label5);
+            this.groupBox2.Controls.Add(this.webBrowser1);
             this.groupBox2.Controls.Add(this.labelCurrentDate);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.labelCurrentTime);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(369, 262);
+            this.groupBox2.Location = new System.Drawing.Point(369, 215);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(573, 487);
+            this.groupBox2.Size = new System.Drawing.Size(573, 534);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Home";
@@ -210,6 +214,25 @@
             this.labelCurrentDate.TabIndex = 3;
             this.labelCurrentDate.Text = "DATE";
             // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(6, 76);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.ScriptErrorsSuppressed = true;
+            this.webBrowser1.Size = new System.Drawing.Size(561, 418);
+            this.webBrowser1.TabIndex = 4;
+            this.webBrowser1.Url = new System.Uri("https://www.bbc.co.uk/weather", System.UriKind.Absolute);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 502);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(393, 29);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "To update website preference please visit User Settings";
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -252,5 +275,7 @@
         private System.Windows.Forms.Label labelCurrentTime;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label labelCurrentDate;
+        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Label label5;
     }
 }
