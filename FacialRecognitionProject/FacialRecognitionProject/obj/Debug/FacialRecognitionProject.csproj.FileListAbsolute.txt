@@ -16,7 +16,6 @@ D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\S
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.csprojAssemblyReference.cache
-D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.Form1.resources
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.Properties.Resources.resources
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.csproj.GenerateResource.cache
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.csproj.CopyComplete
@@ -35,3 +34,4 @@ D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\S
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.WebPages.xml
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.WebPages.Razor.xml
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.LoginForm.resources

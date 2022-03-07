@@ -1,6 +1,6 @@
 ﻿namespace FacialRecognitionProject
 {
-    partial class Form1
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxInputName = new System.Windows.Forms.TextBox();
+            this.textBoxInputPassword = new System.Windows.Forms.TextBox();
+            this.buttonLogIn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // Form1
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(102, 24);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Username:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(12, 129);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 24);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Password:";
+            // 
+            // textBoxInputName
+            // 
+            this.textBoxInputName.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxInputName.Location = new System.Drawing.Point(120, 48);
+            this.textBoxInputName.Name = "textBoxInputName";
+            this.textBoxInputName.Size = new System.Drawing.Size(282, 29);
+            this.textBoxInputName.TabIndex = 2;
+            // 
+            // textBoxInputPassword
+            // 
+            this.textBoxInputPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxInputPassword.Location = new System.Drawing.Point(120, 126);
+            this.textBoxInputPassword.Name = "textBoxInputPassword";
+            this.textBoxInputPassword.PasswordChar = '*';
+            this.textBoxInputPassword.Size = new System.Drawing.Size(282, 29);
+            this.textBoxInputPassword.TabIndex = 3;
+            // 
+            // buttonLogIn
+            // 
+            this.buttonLogIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogIn.Location = new System.Drawing.Point(120, 190);
+            this.buttonLogIn.Name = "buttonLogIn";
+            this.buttonLogIn.Size = new System.Drawing.Size(282, 33);
+            this.buttonLogIn.TabIndex = 4;
+            this.buttonLogIn.Text = "Log In";
+            this.buttonLogIn.UseVisualStyleBackColor = true;
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(414, 263);
+            this.Controls.Add(this.buttonLogIn);
+            this.Controls.Add(this.textBoxInputPassword);
+            this.Controls.Add(this.textBoxInputName);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Name = "LoginForm";
+            this.Text = "Log In";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxInputName;
+        private System.Windows.Forms.TextBox textBoxInputPassword;
+        private System.Windows.Forms.Button buttonLogIn;
     }
 }
 
