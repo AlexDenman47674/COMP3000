@@ -31,7 +31,9 @@
             this.labelCurrentUser = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.databaseViewer = new System.Windows.Forms.DataGridView();
+            this.dataSet1 = new System.Data.DataSet();
             ((System.ComponentModel.ISupportInitialize)(this.databaseViewer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // labelCurrentUser
@@ -58,11 +60,18 @@
             // 
             // databaseViewer
             // 
+            this.databaseViewer.AutoGenerateColumns = false;
             this.databaseViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.databaseViewer.Location = new System.Drawing.Point(56, 59);
+            this.databaseViewer.DataSource = this.dataSet1;
+            this.databaseViewer.Location = new System.Drawing.Point(56, 49);
             this.databaseViewer.Name = "databaseViewer";
             this.databaseViewer.Size = new System.Drawing.Size(886, 464);
             this.databaseViewer.TabIndex = 6;
+            this.databaseViewer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.databaseViewer_CellContentClick);
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "NewDataSet";
             // 
             // DatabaseForm
             // 
@@ -76,7 +85,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DatabaseForm";
             this.Text = "Database";
+            this.Load += new System.EventHandler(this.DatabaseForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.databaseViewer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -87,5 +98,6 @@
         private System.Windows.Forms.Label labelCurrentUser;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView databaseViewer;
+        private System.Data.DataSet dataSet1;
     }
 }

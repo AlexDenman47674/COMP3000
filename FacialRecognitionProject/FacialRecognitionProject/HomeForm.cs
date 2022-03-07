@@ -22,5 +22,13 @@ namespace FacialRecognitionProject
             labelCurrentTime.Text = DateTime.Now.ToString("h:mm:ss tt");
             labelCurrentDate.Text = DateTime.Today.ToString("dd/MM/yyyy");
         }
+
+        private void buttonDatabase_Click(object sender, EventArgs e)
+        {
+            DatabaseForm DataForm = new DatabaseForm();
+
+            DataForm.ShowDialog();
+
+        }
     }
 }

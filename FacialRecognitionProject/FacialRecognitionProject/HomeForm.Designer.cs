@@ -35,17 +35,17 @@
             this.labelCurrentUser = new System.Windows.Forms.Label();
             this.buttonCamera = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonDatabase = new System.Windows.Forms.Button();
-            this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonAbout = new System.Windows.Forms.Button();
+            this.buttonSettings = new System.Windows.Forms.Button();
+            this.buttonDatabase = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.timerDateTime = new System.Windows.Forms.Timer(this.components);
-            this.label3 = new System.Windows.Forms.Label();
-            this.labelCurrentTime = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.labelCurrentDate = new System.Windows.Forms.Label();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.label5 = new System.Windows.Forms.Label();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.labelCurrentDate = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.labelCurrentTime = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.timerDateTime = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -120,16 +120,16 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Navigation";
             // 
-            // buttonDatabase
+            // buttonAbout
             // 
-            this.buttonDatabase.BackColor = System.Drawing.Color.White;
-            this.buttonDatabase.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDatabase.Location = new System.Drawing.Point(6, 108);
-            this.buttonDatabase.Name = "buttonDatabase";
-            this.buttonDatabase.Size = new System.Drawing.Size(297, 33);
-            this.buttonDatabase.TabIndex = 6;
-            this.buttonDatabase.Text = "Access Database";
-            this.buttonDatabase.UseVisualStyleBackColor = false;
+            this.buttonAbout.BackColor = System.Drawing.Color.White;
+            this.buttonAbout.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAbout.Location = new System.Drawing.Point(6, 265);
+            this.buttonAbout.Name = "buttonAbout";
+            this.buttonAbout.Size = new System.Drawing.Size(297, 33);
+            this.buttonAbout.TabIndex = 7;
+            this.buttonAbout.Text = "About Us";
+            this.buttonAbout.UseVisualStyleBackColor = false;
             // 
             // buttonSettings
             // 
@@ -142,16 +142,17 @@
             this.buttonSettings.Text = "User Settings";
             this.buttonSettings.UseVisualStyleBackColor = false;
             // 
-            // buttonAbout
+            // buttonDatabase
             // 
-            this.buttonAbout.BackColor = System.Drawing.Color.White;
-            this.buttonAbout.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAbout.Location = new System.Drawing.Point(6, 265);
-            this.buttonAbout.Name = "buttonAbout";
-            this.buttonAbout.Size = new System.Drawing.Size(297, 33);
-            this.buttonAbout.TabIndex = 7;
-            this.buttonAbout.Text = "About Us";
-            this.buttonAbout.UseVisualStyleBackColor = false;
+            this.buttonDatabase.BackColor = System.Drawing.Color.White;
+            this.buttonDatabase.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDatabase.Location = new System.Drawing.Point(6, 108);
+            this.buttonDatabase.Name = "buttonDatabase";
+            this.buttonDatabase.Size = new System.Drawing.Size(297, 33);
+            this.buttonDatabase.TabIndex = 6;
+            this.buttonDatabase.Text = "Access Database";
+            this.buttonDatabase.UseVisualStyleBackColor = false;
+            this.buttonDatabase.Click += new System.EventHandler(this.buttonDatabase_Click);
             // 
             // groupBox2
             // 
@@ -169,50 +170,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Home";
             // 
-            // timerDateTime
+            // label5
             // 
-            this.timerDateTime.Enabled = true;
-            this.timerDateTime.Tick += new System.EventHandler(this.timerDateTime_Tick);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 37);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "It is currently";
-            // 
-            // labelCurrentTime
-            // 
-            this.labelCurrentTime.AutoSize = true;
-            this.labelCurrentTime.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentTime.Location = new System.Drawing.Point(134, 36);
-            this.labelCurrentTime.Name = "labelCurrentTime";
-            this.labelCurrentTime.Size = new System.Drawing.Size(121, 37);
-            this.labelCurrentTime.TabIndex = 1;
-            this.labelCurrentTime.Text = "0:00:00 AM";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(249, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 37);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "on";
-            // 
-            // labelCurrentDate
-            // 
-            this.labelCurrentDate.AutoSize = true;
-            this.labelCurrentDate.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentDate.Location = new System.Drawing.Point(283, 36);
-            this.labelCurrentDate.Name = "labelCurrentDate";
-            this.labelCurrentDate.Size = new System.Drawing.Size(68, 37);
-            this.labelCurrentDate.TabIndex = 3;
-            this.labelCurrentDate.Text = "DATE";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(8, 502);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(393, 29);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "To update website preference please visit User Settings";
             // 
             // webBrowser1
             // 
@@ -224,14 +189,50 @@
             this.webBrowser1.TabIndex = 4;
             this.webBrowser1.Url = new System.Uri("https://www.bbc.co.uk/weather", System.UriKind.Absolute);
             // 
-            // label5
+            // labelCurrentDate
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 502);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(393, 29);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "To update website preference please visit User Settings";
+            this.labelCurrentDate.AutoSize = true;
+            this.labelCurrentDate.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentDate.Location = new System.Drawing.Point(283, 36);
+            this.labelCurrentDate.Name = "labelCurrentDate";
+            this.labelCurrentDate.Size = new System.Drawing.Size(68, 37);
+            this.labelCurrentDate.TabIndex = 3;
+            this.labelCurrentDate.Text = "DATE";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(249, 36);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 37);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "on";
+            // 
+            // labelCurrentTime
+            // 
+            this.labelCurrentTime.AutoSize = true;
+            this.labelCurrentTime.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentTime.Location = new System.Drawing.Point(134, 36);
+            this.labelCurrentTime.Name = "labelCurrentTime";
+            this.labelCurrentTime.Size = new System.Drawing.Size(121, 37);
+            this.labelCurrentTime.TabIndex = 1;
+            this.labelCurrentTime.Text = "0:00:00 AM";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(137, 37);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "It is currently";
+            // 
+            // timerDateTime
+            // 
+            this.timerDateTime.Enabled = true;
+            this.timerDateTime.Tick += new System.EventHandler(this.timerDateTime_Tick);
             // 
             // HomeForm
             // 
