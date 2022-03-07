@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxInputName = new System.Windows.Forms.TextBox();
@@ -36,7 +37,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.timerPasswordCheck = new System.Windows.Forms.Timer(this.components);
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -72,7 +78,6 @@
             this.textBoxInputPassword.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxInputPassword.Location = new System.Drawing.Point(149, 108);
             this.textBoxInputPassword.Name = "textBoxInputPassword";
-            this.textBoxInputPassword.PasswordChar = '*';
             this.textBoxInputPassword.Size = new System.Drawing.Size(282, 43);
             this.textBoxInputPassword.TabIndex = 3;
             // 
@@ -103,7 +108,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(173, 71);
+            this.label4.Location = new System.Drawing.Point(136, 427);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(244, 29);
             this.label4.TabIndex = 6;
@@ -111,6 +116,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.checkBoxShowPassword);
             this.groupBox1.Controls.Add(this.textBoxInputName);
             this.groupBox1.Controls.Add(this.textBoxInputPassword);
             this.groupBox1.Controls.Add(this.buttonLogIn);
@@ -124,6 +131,41 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Log In to Proceed";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::FacialRecognitionProject.Properties.Resources.SOFIALogo;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 350);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(125, 106);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // checkBoxShowPassword
+            // 
+            this.checkBoxShowPassword.AutoSize = true;
+            this.checkBoxShowPassword.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(275, 163);
+            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxShowPassword.TabIndex = 5;
+            this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(144, 157);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(130, 29);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Show Password?";
+            // 
+            // timerPasswordCheck
+            // 
+            this.timerPasswordCheck.Enabled = true;
+            this.timerPasswordCheck.Tick += new System.EventHandler(this.timerPasswordCheck_Tick);
+            // 
             // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -131,6 +173,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::FacialRecognitionProject.Properties.Resources.LogInBackground;
             this.ClientSize = new System.Drawing.Size(581, 456);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
@@ -139,6 +182,7 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -154,6 +198,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.CheckBox checkBoxShowPassword;
+        private System.Windows.Forms.Timer timerPasswordCheck;
     }
 }
 

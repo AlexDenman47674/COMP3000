@@ -128,5 +128,8 @@
   <ItemGroup>
     <None Include="Resources\LogInBackground.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SOFIALogo.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

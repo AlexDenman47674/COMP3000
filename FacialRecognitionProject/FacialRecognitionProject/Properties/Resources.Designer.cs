@@ -69,5 +69,15 @@ namespace FacialRecognitionProject.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SOFIALogo {
+            get {
+                object obj = ResourceManager.GetObject("SOFIALogo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

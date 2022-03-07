@@ -20,5 +20,17 @@ namespace FacialRecognitionProject
         {
 
         }
+
+        private void timerPasswordCheck_Tick(object sender, EventArgs e)
+        {
+            if (checkBoxShowPassword.Checked==true)
+            {
+                textBoxInputPassword.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                textBoxInputPassword.UseSystemPasswordChar = true;
+            }
+        }
     }
 }
