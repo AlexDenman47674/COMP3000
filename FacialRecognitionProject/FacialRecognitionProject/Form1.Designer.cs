@@ -78,13 +78,14 @@
             // 
             // buttonLogIn
             // 
-            this.buttonLogIn.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogIn.BackColor = System.Drawing.Color.White;
+            this.buttonLogIn.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogIn.Location = new System.Drawing.Point(149, 215);
             this.buttonLogIn.Name = "buttonLogIn";
             this.buttonLogIn.Size = new System.Drawing.Size(282, 33);
             this.buttonLogIn.TabIndex = 4;
             this.buttonLogIn.Text = "Log In";
-            this.buttonLogIn.UseVisualStyleBackColor = true;
+            this.buttonLogIn.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
