@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Net;
 using MySqlConnector;
 using System.Web.Mvc;
-using ServiceStack.Text;
+
 
 namespace FacialRecognitionProject
 {
@@ -16,8 +16,6 @@ namespace FacialRecognitionProject
         {
             InitializeComponent();
         }
-
-        $Env:GOOGLE_APPLICATION_CREDENTIALS = "C:\Users\CURRENT_USER\Downloads\FILENAME.json"
 
 
             private void Form1_Load(object sender, EventArgs e)

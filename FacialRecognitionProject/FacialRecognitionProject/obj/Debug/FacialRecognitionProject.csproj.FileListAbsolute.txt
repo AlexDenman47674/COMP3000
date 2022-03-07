@@ -35,3 +35,5 @@ D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\S
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.WebPages.Deployment.xml
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\System.Web.WebPages.Razor.xml
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.LoginForm.resources
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\ServiceStack.Text.dll
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\ServiceStack.Text.xml
