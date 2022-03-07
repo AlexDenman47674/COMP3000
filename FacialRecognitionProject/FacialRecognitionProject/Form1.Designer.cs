@@ -37,10 +37,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timerPasswordCheck = new System.Windows.Forms.Timer(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.buttonSignUp = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -59,7 +61,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 117);
+            this.label2.Location = new System.Drawing.Point(6, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 34);
             this.label2.TabIndex = 1;
@@ -76,7 +78,7 @@
             // textBoxInputPassword
             // 
             this.textBoxInputPassword.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxInputPassword.Location = new System.Drawing.Point(149, 108);
+            this.textBoxInputPassword.Location = new System.Drawing.Point(149, 79);
             this.textBoxInputPassword.Name = "textBoxInputPassword";
             this.textBoxInputPassword.Size = new System.Drawing.Size(282, 43);
             this.textBoxInputPassword.TabIndex = 3;
@@ -85,7 +87,7 @@
             // 
             this.buttonLogIn.BackColor = System.Drawing.Color.White;
             this.buttonLogIn.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogIn.Location = new System.Drawing.Point(149, 215);
+            this.buttonLogIn.Location = new System.Drawing.Point(149, 157);
             this.buttonLogIn.Name = "buttonLogIn";
             this.buttonLogIn.Size = new System.Drawing.Size(282, 33);
             this.buttonLogIn.TabIndex = 4;
@@ -116,6 +118,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.buttonSignUp);
+            this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.checkBoxShowPassword);
             this.groupBox1.Controls.Add(this.textBoxInputName);
@@ -131,6 +135,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Log In to Proceed";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(144, 125);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(130, 29);
+            this.label5.TabIndex = 6;
+            this.label5.Text = "Show Password?";
+            // 
+            // checkBoxShowPassword
+            // 
+            this.checkBoxShowPassword.AutoSize = true;
+            this.checkBoxShowPassword.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxShowPassword.Location = new System.Drawing.Point(280, 130);
+            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
+            this.checkBoxShowPassword.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxShowPassword.TabIndex = 5;
+            this.checkBoxShowPassword.UseVisualStyleBackColor = true;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -142,29 +165,30 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
-            // checkBoxShowPassword
-            // 
-            this.checkBoxShowPassword.AutoSize = true;
-            this.checkBoxShowPassword.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxShowPassword.Location = new System.Drawing.Point(275, 163);
-            this.checkBoxShowPassword.Name = "checkBoxShowPassword";
-            this.checkBoxShowPassword.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxShowPassword.TabIndex = 5;
-            this.checkBoxShowPassword.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(144, 157);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(130, 29);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Show Password?";
-            // 
             // timerPasswordCheck
             // 
             this.timerPasswordCheck.Enabled = true;
             this.timerPasswordCheck.Tick += new System.EventHandler(this.timerPasswordCheck_Tick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(275, 193);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 29);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Or";
+            // 
+            // buttonSignUp
+            // 
+            this.buttonSignUp.BackColor = System.Drawing.Color.White;
+            this.buttonSignUp.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSignUp.Location = new System.Drawing.Point(149, 215);
+            this.buttonSignUp.Name = "buttonSignUp";
+            this.buttonSignUp.Size = new System.Drawing.Size(282, 33);
+            this.buttonSignUp.TabIndex = 8;
+            this.buttonSignUp.Text = "Sign Up";
+            this.buttonSignUp.UseVisualStyleBackColor = false;
             // 
             // LoginForm
             // 
@@ -202,6 +226,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox checkBoxShowPassword;
         private System.Windows.Forms.Timer timerPasswordCheck;
+        private System.Windows.Forms.Button buttonSignUp;
+        private System.Windows.Forms.Label label6;
     }
 }
 
