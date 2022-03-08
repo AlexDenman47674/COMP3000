@@ -44,5 +44,13 @@ namespace FacialRecognitionProject
 
             CamForm.ShowDialog();
         }
+
+        private void buttonSettings_Click(object sender, EventArgs e)
+        {
+            UserSettingsForm SettingsForm = new UserSettingsForm();
+
+            SettingsForm.ShowDialog();
+            this.Close();
+        }
     }
 }

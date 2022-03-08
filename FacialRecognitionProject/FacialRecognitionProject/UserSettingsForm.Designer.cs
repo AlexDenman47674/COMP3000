@@ -32,11 +32,11 @@
             this.buttonChangePassword = new System.Windows.Forms.Button();
             this.buttonSignOut = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBoxShowDetails = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonConfirm = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.checkBoxShowDetails = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,7 @@
             this.buttonSignOut.TabIndex = 2;
             this.buttonSignOut.Text = "Sign Out";
             this.buttonSignOut.UseVisualStyleBackColor = false;
+            this.buttonSignOut.Click += new System.EventHandler(this.buttonSignOut_Click);
             // 
             // groupBox1
             // 
@@ -91,14 +92,32 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Settings Options";
             // 
-            // checkBoxShowDetails
+            // buttonConfirm
             // 
-            this.checkBoxShowDetails.AutoSize = true;
-            this.checkBoxShowDetails.Location = new System.Drawing.Point(193, 144);
-            this.checkBoxShowDetails.Name = "checkBoxShowDetails";
-            this.checkBoxShowDetails.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxShowDetails.TabIndex = 3;
-            this.checkBoxShowDetails.UseVisualStyleBackColor = true;
+            this.buttonConfirm.BackColor = System.Drawing.Color.White;
+            this.buttonConfirm.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonConfirm.Location = new System.Drawing.Point(299, 226);
+            this.buttonConfirm.Name = "buttonConfirm";
+            this.buttonConfirm.Size = new System.Drawing.Size(202, 32);
+            this.buttonConfirm.TabIndex = 7;
+            this.buttonConfirm.Text = "Confirm";
+            this.buttonConfirm.UseVisualStyleBackColor = false;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(193, 183);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(308, 37);
+            this.textBox1.TabIndex = 6;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 191);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(141, 29);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Favourite Website:";
             // 
             // label1
             // 
@@ -110,32 +129,14 @@
             this.label1.Text = "Show Person Details:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // checkBoxShowDetails
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 191);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(141, 29);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Favourite Website:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(193, 183);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(308, 37);
-            this.textBox1.TabIndex = 6;
-            // 
-            // buttonConfirm
-            // 
-            this.buttonConfirm.BackColor = System.Drawing.Color.White;
-            this.buttonConfirm.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonConfirm.Location = new System.Drawing.Point(299, 226);
-            this.buttonConfirm.Name = "buttonConfirm";
-            this.buttonConfirm.Size = new System.Drawing.Size(202, 32);
-            this.buttonConfirm.TabIndex = 7;
-            this.buttonConfirm.Text = "Confirm";
-            this.buttonConfirm.UseVisualStyleBackColor = false;
+            this.checkBoxShowDetails.AutoSize = true;
+            this.checkBoxShowDetails.Location = new System.Drawing.Point(193, 144);
+            this.checkBoxShowDetails.Name = "checkBoxShowDetails";
+            this.checkBoxShowDetails.Size = new System.Drawing.Size(15, 14);
+            this.checkBoxShowDetails.TabIndex = 3;
+            this.checkBoxShowDetails.UseVisualStyleBackColor = true;
             // 
             // UserSettingsForm
             // 

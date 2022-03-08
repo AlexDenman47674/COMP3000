@@ -21,5 +21,16 @@ namespace FacialRecognitionProject
         {
 
         }
+
+        private void buttonSignOut_Click(object sender, EventArgs e)
+        {
+            LoginForm LoginForm = new LoginForm();
+
+            LoginForm.Show();
+            HomeForm MainForm = new HomeForm();
+
+            MainForm.Close();
+            this.Close();
+        }
     }
 }

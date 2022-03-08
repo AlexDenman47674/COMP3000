@@ -143,6 +143,7 @@
             this.buttonSettings.TabIndex = 7;
             this.buttonSettings.Text = "User Settings";
             this.buttonSettings.UseVisualStyleBackColor = false;
+            this.buttonSettings.Click += new System.EventHandler(this.buttonSettings_Click);
             // 
             // buttonDatabase
             // 
