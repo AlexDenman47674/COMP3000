@@ -32,5 +32,13 @@ namespace FacialRecognitionProject
             MainForm.Close();
             this.Close();
         }
+
+        private void buttonChangePassword_Click(object sender, EventArgs e)
+        {
+            PasswordForm PassForm = new PasswordForm();
+
+            PassForm.Show();
+            this.Close();
+        }
     }
 }
