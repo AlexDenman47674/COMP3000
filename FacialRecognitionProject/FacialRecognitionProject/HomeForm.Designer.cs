@@ -105,6 +105,7 @@
             this.buttonCamera.TabIndex = 5;
             this.buttonCamera.Text = "Access Camera";
             this.buttonCamera.UseVisualStyleBackColor = false;
+            this.buttonCamera.Click += new System.EventHandler(this.buttonCamera_Click);
             // 
             // groupBox1
             // 

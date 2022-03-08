@@ -37,5 +37,12 @@ namespace FacialRecognitionProject
 
             AboutUsForm.ShowDialog();
         }
+
+        private void buttonCamera_Click(object sender, EventArgs e)
+        {
+            CameraForm CamForm = new CameraForm();
+
+            CamForm.ShowDialog();
+        }
     }
 }
