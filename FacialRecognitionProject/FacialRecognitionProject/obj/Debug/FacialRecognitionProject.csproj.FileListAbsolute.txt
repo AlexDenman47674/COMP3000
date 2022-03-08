@@ -43,3 +43,4 @@ D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\F
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.CameraForm.resources
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.UserSettingsForm.resources
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.PasswordForm.resources
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.SignUpForm.resources

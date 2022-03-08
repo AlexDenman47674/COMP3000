@@ -37,12 +37,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.buttonSignUp = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.checkBoxShowPassword = new System.Windows.Forms.CheckBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timerPasswordCheck = new System.Windows.Forms.Timer(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.buttonSignUp = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -136,6 +136,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Log In to Proceed";
             // 
+            // buttonSignUp
+            // 
+            this.buttonSignUp.BackColor = System.Drawing.Color.White;
+            this.buttonSignUp.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSignUp.Location = new System.Drawing.Point(149, 215);
+            this.buttonSignUp.Name = "buttonSignUp";
+            this.buttonSignUp.Size = new System.Drawing.Size(282, 33);
+            this.buttonSignUp.TabIndex = 8;
+            this.buttonSignUp.Text = "Sign Up";
+            this.buttonSignUp.UseVisualStyleBackColor = false;
+            this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(275, 193);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 29);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Or";
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -170,26 +191,6 @@
             // 
             this.timerPasswordCheck.Enabled = true;
             this.timerPasswordCheck.Tick += new System.EventHandler(this.timerPasswordCheck_Tick);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(275, 193);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(31, 29);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Or";
-            // 
-            // buttonSignUp
-            // 
-            this.buttonSignUp.BackColor = System.Drawing.Color.White;
-            this.buttonSignUp.Font = new System.Drawing.Font("Myanmar Text", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSignUp.Location = new System.Drawing.Point(149, 215);
-            this.buttonSignUp.Name = "buttonSignUp";
-            this.buttonSignUp.Size = new System.Drawing.Size(282, 33);
-            this.buttonSignUp.TabIndex = 8;
-            this.buttonSignUp.Text = "Sign Up";
-            this.buttonSignUp.UseVisualStyleBackColor = false;
             // 
             // LoginForm
             // 

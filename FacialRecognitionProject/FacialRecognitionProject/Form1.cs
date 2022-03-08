@@ -43,5 +43,14 @@ namespace FacialRecognitionProject
 
             this.Hide();
         }
+
+        private void buttonSignUp_Click(object sender, EventArgs e)
+        {
+            SignUpForm SignForm = new SignUpForm();
+
+            SignForm.Show();
+
+            this.Hide();
+        }
     }
 }
