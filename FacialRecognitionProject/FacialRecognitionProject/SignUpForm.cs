@@ -28,5 +28,14 @@ namespace FacialRecognitionProject
                 textBoxInputPassword.UseSystemPasswordChar = true;
             }
         }
+
+        private void buttonSignUp_Click(object sender, EventArgs e)
+        {
+            HomeForm MainForm = new HomeForm();
+
+            MainForm.Show();
+
+            this.Close();
+        }
     }
 }
