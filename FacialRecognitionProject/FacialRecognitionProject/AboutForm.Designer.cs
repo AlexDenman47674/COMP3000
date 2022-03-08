@@ -39,9 +39,9 @@
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.BackgroundImage = global::FacialRecognitionProject.Properties.Resources.SOFIALogo;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(225, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(416, 310);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(125, 103);
+            this.pictureBox1.Size = new System.Drawing.Size(164, 145);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -72,9 +72,9 @@
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImage = global::FacialRecognitionProject.Properties.Resources.LogInBackground;
             this.ClientSize = new System.Drawing.Size(581, 456);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AboutForm";
             this.Text = "About Us";
