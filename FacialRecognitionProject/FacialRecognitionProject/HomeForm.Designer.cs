@@ -130,6 +130,7 @@
             this.buttonAbout.TabIndex = 7;
             this.buttonAbout.Text = "About Us";
             this.buttonAbout.UseVisualStyleBackColor = false;
+            this.buttonAbout.Click += new System.EventHandler(this.buttonAbout_Click);
             // 
             // buttonSettings
             // 
@@ -193,7 +194,7 @@
             // 
             this.labelCurrentDate.AutoSize = true;
             this.labelCurrentDate.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCurrentDate.Location = new System.Drawing.Point(283, 36);
+            this.labelCurrentDate.Location = new System.Drawing.Point(296, 36);
             this.labelCurrentDate.Name = "labelCurrentDate";
             this.labelCurrentDate.Size = new System.Drawing.Size(68, 37);
             this.labelCurrentDate.TabIndex = 3;
@@ -203,7 +204,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(249, 36);
+            this.label4.Location = new System.Drawing.Point(259, 36);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 37);
             this.label4.TabIndex = 2;

@@ -30,5 +30,12 @@ namespace FacialRecognitionProject
             DataForm.ShowDialog();
 
         }
+
+        private void buttonAbout_Click(object sender, EventArgs e)
+        {
+            AboutForm AboutUsForm = new AboutForm();
+
+            AboutUsForm.ShowDialog();
+        }
     }
 }

@@ -39,3 +39,4 @@ D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\S
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\ServiceStack.Text.xml
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.HomeForm.resources
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.DatabaseForm.resources
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.AboutForm.resources
