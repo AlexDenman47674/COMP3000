@@ -114,6 +114,7 @@
             this.buttonChangePassword.TabIndex = 6;
             this.buttonChangePassword.Text = "Change Password";
             this.buttonChangePassword.UseVisualStyleBackColor = false;
+            this.buttonChangePassword.Click += new System.EventHandler(this.buttonChangePassword_Click);
             // 
             // PasswordForm
             // 
@@ -123,6 +124,7 @@
             this.BackgroundImage = global::FacialRecognitionProject.Properties.Resources.LogInBackground;
             this.ClientSize = new System.Drawing.Size(581, 456);
             this.Controls.Add(this.groupBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PasswordForm";
             this.Text = "Update Password";
             this.groupBox1.ResumeLayout(false);
