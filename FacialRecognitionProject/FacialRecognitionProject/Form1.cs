@@ -22,6 +22,9 @@ namespace FacialRecognitionProject
         private void Form1_Load(object sender, EventArgs e)
         {
             AllUsernames.Add("TestUser1");
+            AllUsernames.Add("TestUser2");
+            AllPasswords.Add("DefaultPassword1");
+            AllPasswords.Add("DefaultPassword2");
         }
 
         private void timerPasswordCheck_Tick(object sender, EventArgs e)
