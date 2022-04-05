@@ -5,7 +5,7 @@ using System.Windows.Forms;
 using System.Net;
 using MySqlConnector;
 using System.Web.Mvc;
-
+using System.Collections.Generic;
 
 namespace FacialRecognitionProject
 {
@@ -16,11 +16,12 @@ namespace FacialRecognitionProject
         {
             InitializeComponent();
         }
+        List<String> AllUsernames = new List<String>();
+        List<String> AllPasswords = new List<String>();
 
-
-            private void Form1_Load(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-
+            AllUsernames.Add("TestUser1");
         }
 
         private void timerPasswordCheck_Tick(object sender, EventArgs e)
