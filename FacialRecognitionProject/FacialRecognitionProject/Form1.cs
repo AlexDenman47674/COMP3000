@@ -41,11 +41,26 @@ namespace FacialRecognitionProject
 
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
-            HomeForm MainForm = new HomeForm();
 
-            MainForm.Show();
+            for (int i = 0; i <= AllUsernames.Count-1; i++)
+            {
+                for (int j = 0; j <= AllPasswords.Count-1; j++)
+                {
+                    if (textBoxInputName.Text == AllUsernames[i])
+                    {
+                        if (i == j && textBoxInputPassword.Text == AllPasswords[j])
+                        {
+                            HomeForm MainForm = new HomeForm();
 
-            this.Hide();
+                            MainForm.Show();
+
+                            this.Hide();
+                        }
+                    }
+                }
+            }
+
+
         }
 
         private void buttonSignUp_Click(object sender, EventArgs e)
