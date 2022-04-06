@@ -33,7 +33,7 @@
             this.buttonSignOut = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.buttonConfirm = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxInputWebsite = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBoxShowDetails = new System.Windows.Forms.CheckBox();
@@ -78,7 +78,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.buttonConfirm);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBoxInputWebsite);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.checkBoxShowDetails);
@@ -103,13 +103,14 @@
             this.buttonConfirm.TabIndex = 7;
             this.buttonConfirm.Text = "Confirm";
             this.buttonConfirm.UseVisualStyleBackColor = false;
+            this.buttonConfirm.Click += new System.EventHandler(this.buttonConfirm_Click);
             // 
-            // textBox1
+            // textBoxInputWebsite
             // 
-            this.textBox1.Location = new System.Drawing.Point(193, 183);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(308, 37);
-            this.textBox1.TabIndex = 6;
+            this.textBoxInputWebsite.Location = new System.Drawing.Point(193, 183);
+            this.textBoxInputWebsite.Name = "textBoxInputWebsite";
+            this.textBoxInputWebsite.Size = new System.Drawing.Size(308, 37);
+            this.textBoxInputWebsite.TabIndex = 6;
             // 
             // label2
             // 
@@ -165,7 +166,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckBox checkBoxShowDetails;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxInputWebsite;
         private System.Windows.Forms.Button buttonConfirm;
     }
 }

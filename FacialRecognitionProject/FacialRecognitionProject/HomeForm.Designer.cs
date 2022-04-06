@@ -46,6 +46,7 @@
             this.labelCurrentTime = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.timerDateTime = new System.Windows.Forms.Timer(this.components);
+            this.buttonUpdateWeb = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -159,6 +160,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonUpdateWeb);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.webBrowser1);
             this.groupBox2.Controls.Add(this.labelCurrentDate);
@@ -237,6 +239,18 @@
             this.timerDateTime.Enabled = true;
             this.timerDateTime.Tick += new System.EventHandler(this.timerDateTime_Tick);
             // 
+            // buttonUpdateWeb
+            // 
+            this.buttonUpdateWeb.BackColor = System.Drawing.Color.White;
+            this.buttonUpdateWeb.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdateWeb.Location = new System.Drawing.Point(479, 500);
+            this.buttonUpdateWeb.Name = "buttonUpdateWeb";
+            this.buttonUpdateWeb.Size = new System.Drawing.Size(88, 28);
+            this.buttonUpdateWeb.TabIndex = 6;
+            this.buttonUpdateWeb.Text = "Update";
+            this.buttonUpdateWeb.UseVisualStyleBackColor = false;
+            this.buttonUpdateWeb.Click += new System.EventHandler(this.buttonUpdateWeb_Click);
+            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,5 +295,6 @@
         private System.Windows.Forms.Label labelCurrentDate;
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button buttonUpdateWeb;
     }
 }

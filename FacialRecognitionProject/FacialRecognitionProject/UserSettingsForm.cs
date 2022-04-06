@@ -12,10 +12,12 @@ namespace FacialRecognitionProject
 {
     public partial class UserSettingsForm : Form
     {
+        HomeForm MainForm = new HomeForm();
         public UserSettingsForm()
         {
             InitializeComponent();
         }
+        string InputURL;
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -38,6 +40,15 @@ namespace FacialRecognitionProject
             PasswordForm PassForm = new PasswordForm();
 
             PassForm.Show();
+            this.Close();
+        }
+
+        private void buttonConfirm_Click(object sender, EventArgs e)
+        {
+            InputURL = textBoxInputWebsite.Text;
+
+            MainForm.MyURL = InputURL;
+            MainForm.Show();
             this.Close();
         }
     }

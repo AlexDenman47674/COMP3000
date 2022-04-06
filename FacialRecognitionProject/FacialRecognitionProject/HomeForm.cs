@@ -13,9 +13,24 @@ namespace FacialRecognitionProject
     public partial class HomeForm : Form
     {
         string FavURL = "https://www.bbc.co.uk/weather";
+
+        public string MyURL
+        {
+            get
+            {
+                return FavURL;
+            }
+            set
+            {
+                if (FavURL != value)
+                    FavURL = value;
+            }
+        }
+
         public HomeForm()
         {
             InitializeComponent();
+            webBrowser1.Navigate(new Uri(MyURL));
         }
 
 
@@ -53,6 +68,11 @@ namespace FacialRecognitionProject
 
             SettingsForm.ShowDialog();
             this.Close();
+        }
+
+        private void buttonUpdateWeb_Click(object sender, EventArgs e)
+        {
+            webBrowser1.Navigate(new Uri(MyURL));
         }
     }
 }
