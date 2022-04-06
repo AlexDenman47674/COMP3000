@@ -12,10 +12,12 @@ namespace FacialRecognitionProject
 {
     public partial class HomeForm : Form
     {
+        string FavURL = "https://www.bbc.co.uk/weather";
         public HomeForm()
         {
             InitializeComponent();
         }
+
 
         private void timerDateTime_Tick(object sender, EventArgs e)
         {
