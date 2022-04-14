@@ -20,10 +20,12 @@ namespace FacialRecognitionProject
 
         const string SUBSCRIPTION_KEY = "SUB KEY GOES HERE";
         const string ENDPOINT = "END POINT GOES HERE";
+        
 
         public CameraForm()
         {
             InitializeComponent();
+
         }
 
         private void CameraForm_Load(object sender, EventArgs e)
