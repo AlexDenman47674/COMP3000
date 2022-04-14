@@ -39,6 +39,13 @@ namespace FacialRecognitionProject
             // FaceList - create a face list, then get data
         }
 
-
+        /*
+        *	AUTHENTICATE
+        *	Uses subscription key and region to create a client.
+        */
+        public static IFaceClient Authenticate(string endpoint, string key)
+        {
+            return new FaceClient(new ApiKeyServiceClientCredentials(key)) { Endpoint = endpoint };
+        }
     }
 }
