@@ -17,6 +17,10 @@ namespace FacialRecognitionProject
 {
     public partial class CameraForm : Form
     {
+
+        const string SUBSCRIPTION_KEY = "SUB KEY GOES HERE";
+        const string ENDPOINT = "END POINT GOES HERE";
+
         public CameraForm()
         {
             InitializeComponent();
