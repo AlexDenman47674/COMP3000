@@ -10,16 +10,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using Microsoft.Azure.CognitiveServices.Vision.Face;
-using Microsoft.Azure.CognitiveServices.Vision.Face.Models;
-
 namespace FacialRecognitionProject
 {
     public partial class CameraForm : Form
     {
 
-        const string SUBSCRIPTION_KEY = "SUB KEY GOES HERE";
-        const string ENDPOINT = "END POINT GOES HERE";
         
 
         public CameraForm()

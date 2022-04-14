@@ -116,6 +116,7 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="AzureFace.cs" />
     <Compile Include="CameraForm.cs">
       <SubType>Form</SubType>
     </Compile>
