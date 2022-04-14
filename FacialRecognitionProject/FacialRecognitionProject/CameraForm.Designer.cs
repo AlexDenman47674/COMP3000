@@ -40,6 +40,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "CameraForm";
             this.Text = "Camera";
+            this.Load += new System.EventHandler(this.CameraForm_Load);
             this.ResumeLayout(false);
 
         }
