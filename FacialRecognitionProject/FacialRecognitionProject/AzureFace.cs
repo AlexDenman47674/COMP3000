@@ -49,5 +49,45 @@ namespace FacialRecognitionProject
         {
             return new FaceClient(new ApiKeyServiceClientCredentials(key)) { Endpoint = endpoint };
         }
+
+
+        /* 
+        * DETECT FACES
+        * Detects features from faces and IDs them.
+        */
+        public static async Task DetectFaceExtract(IFaceClient client, string url, string recognitionModel)
+        {
+            Console.WriteLine("========DETECT FACES========");
+            Console.WriteLine();
+
+            // Create a list of images
+            List<string> imageFileNames = new List<string>
+                    {
+                        "detection1.jpg",    // single female with glasses
+                        // "detection2.jpg", // (optional: single man)
+                        // "detection3.jpg", // (optional: single male construction worker)
+                        // "detection4.jpg", // (optional: 3 people at cafe, 1 is blurred)
+                        "detection5.jpg",    // family, woman child man
+                        "detection6.jpg"     // elderly couple, male female
+                    };
+
+            foreach (var imageFileName in imageFileNames)
+            {
+                IList<DetectedFace> detectedFaces;
+
+                // Detect faces with all attributes from image url.
+                detectedFaces = await client.Face.DetectWithUrlAsync($"{url}{imageFileName}",
+                        returnFaceAttributes: new List<FaceAttributeType> { FaceAttributeType.Accessories, FaceAttributeType.Age,
+                FaceAttributeType.Blur, FaceAttributeType.Emotion, FaceAttributeType.Exposure, FaceAttributeType.FacialHair,
+                FaceAttributeType.Glasses, FaceAttributeType.Hair, FaceAttributeType.HeadPose,
+                FaceAttributeType.Makeup, FaceAttributeType.Noise, FaceAttributeType.Occlusion, FaceAttributeType.Smile,
+                FaceAttributeType.Smile, FaceAttributeType.QualityForRecognition },
+                        // We specify detection model 1 because we are retrieving attributes.
+                        detectionModel: DetectionModel.Detection01,
+                        recognitionModel: recognitionModel);
+
+                Console.WriteLine($"{detectedFaces.Count} face(s) detected from image `{imageFileName}`.");
+            }
+        }
     }
 }
