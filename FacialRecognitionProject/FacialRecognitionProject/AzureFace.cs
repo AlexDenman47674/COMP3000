@@ -274,5 +274,44 @@ namespace FacialRecognitionProject
 
             return sufficientQualityFaces.ToList();
         }
+
+        /*
+        * FIND SIMILAR
+        * This example will take an image and find a similar one to it in another image.
+        */
+        public static async Task FindSimilar(IFaceClient client, string url, string recognition_model)
+        {
+            Console.WriteLine("========FIND SIMILAR========");
+            Console.WriteLine();
+
+            List<string> targetImageFileNames = new List<string>
+                        {
+                            "Family1-Dad1.jpg",
+                            "Family1-Daughter1.jpg",
+                            "Family1-Mom1.jpg",
+                            "Family1-Son1.jpg",
+                            "Family2-Lady1.jpg",
+                            "Family2-Man1.jpg",
+                            "Family3-Lady1.jpg",
+                            "Family3-Man1.jpg"
+                        };
+
+            string sourceImageFileName = "findsimilar.jpg";
+            IList<Guid?> targetFaceIds = new List<Guid?>();
+            foreach (var targetImageFileName in targetImageFileNames)
+            {
+                // Detect faces from target image url.
+                var faces = await DetectFaceRecognize(client, $"{url}{targetImageFileName}", recognition_model);
+                // Add detected faceId to list of GUIDs.
+                targetFaceIds.Add(faces[0].FaceId.Value);
+            }
+
+            // Detect faces from source image url.
+            IList<DetectedFace> detectedFaces = await DetectFaceRecognize(client, $"{url}{sourceImageFileName}", recognition_model);
+            Console.WriteLine();
+
+            // Find a similar face(s) in the list of IDs. Comapring only the first in list for testing purposes.
+            IList<SimilarFace> similarResults = await client.Face.FindSimilarAsync(detectedFaces[0].FaceId.Value, null, null, targetFaceIds);
+        }
     }
 }
