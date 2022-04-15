@@ -177,6 +177,48 @@ namespace FacialRecognitionProject
             // A group photo that includes some of the persons you seek to identify from your dictionary.
             string sourceImageFileName = "identification1.jpg";
 
+            // Create a person group. 
+            Console.WriteLine($"Create a person group ({personGroupId}).");
+            await client.PersonGroup.CreateAsync(personGroupId, personGroupId, recognitionModel: recognitionModel);
+            // The similar faces will be grouped into a single person group person.
+            foreach (var groupedFace in personDictionary.Keys)
+            {
+                // Limit TPS
+                await Task.Delay(250);
+                Person person = await client.PersonGroupPerson.CreateAsync(personGroupId: personGroupId, name: groupedFace);
+                Console.WriteLine($"Create a person group person '{groupedFace}'.");
+
+                // Add face to the person group person.
+                foreach (var similarImage in personDictionary[groupedFace])
+                {
+                    Console.WriteLine($"Check whether image is of sufficient quality for recognition");
+                    IList<DetectedFace> detectedFaces = await client.Face.DetectWithUrlAsync($"{url}{similarImage}",
+                        recognitionModel: recognition_model,
+                        detectionModel: DetectionModel.Detection03,
+                        returnFaceAttributes: new List<FaceAttributeType> { FaceAttributeType.QualityForRecognition });
+                    bool sufficientQuality = true;
+                    foreach (var face in detectedFaces)
+                    {
+                        var faceQualityForRecognition = face.FaceAttributes.QualityForRecognition;
+                        //  Only "high" quality images are recommended for person enrollment
+                        if (faceQualityForRecognition.HasValue && (faceQualityForRecognition.Value != QualityForRecognition.High))
+                        {
+                            sufficientQuality = false;
+                            break;
+                        }
+                    }
+
+                    if (!sufficientQuality)
+                    {
+                        continue;
+                    }
+
+
+                    Console.WriteLine($"Add face to the person group person({groupedFace}) from image `{similarImage}`");
+                    PersistedFace face = await client.PersonGroupPerson.AddFaceFromUrlAsync(personGroupId, person.PersonId,
+                        $"{url}{similarImage}", similarImage);
+                }
+            }
         }
     }
 }
