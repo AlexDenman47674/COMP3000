@@ -29,16 +29,18 @@ namespace FacialRecognitionProject
             DetectFaceExtract(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
             // Find Similar - find a similar face from a list of faces.
             FindSimilar(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
+
             // Verify - compare two images if the same person or not.
-            Verify(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
+            //Verify(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
 
             // Identify - recognize a face(s) in a person group (a person group is created in this example).
             IdentifyInPersonGroup(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
-            // LargePersonGroup - create, then get data.
-            LargePersonGroup(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
-            // Group faces - automatically group similar faces.
-            Group(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
-            // FaceList - create a face list, then get data
+
+            //// LargePersonGroup - create, then get data.
+            //LargePersonGroup(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
+            //// Group faces - automatically group similar faces.
+            //Group(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
+            //// FaceList - create a face list, then get data
         }
 
         /*
@@ -81,7 +83,7 @@ namespace FacialRecognitionProject
                 FaceAttributeType.Blur, FaceAttributeType.Emotion, FaceAttributeType.Exposure, FaceAttributeType.FacialHair,
                 FaceAttributeType.Glasses, FaceAttributeType.Hair, FaceAttributeType.HeadPose,
                 FaceAttributeType.Makeup, FaceAttributeType.Noise, FaceAttributeType.Occlusion, FaceAttributeType.Smile,
-                FaceAttributeType.Smile, FaceAttributeType.QualityForRecognition },
+                FaceAttributeType.Smile, FaceAttributeType.Gender },
                         // We specify detection model 1 because we are retrieving attributes.
                         detectionModel: DetectionModel.Detection01,
                         recognitionModel: recognitionModel);
@@ -152,9 +154,6 @@ namespace FacialRecognitionProject
                         $" {string.Format("ForeheadOccluded: {0}", face.FaceAttributes.Occlusion.ForeheadOccluded ? "Yes" : "No")}   {string.Format("MouthOccluded: {0}", face.FaceAttributes.Occlusion.MouthOccluded ? "Yes" : "No")}");
                     Console.WriteLine($"Smile : {face.FaceAttributes.Smile}");
 
-                    // Get quality for recognition attribute
-                    Console.WriteLine($"QualityForRecognition : {face.FaceAttributes.QualityForRecognition}");
-                    Console.WriteLine();
                 }
             }
         }
