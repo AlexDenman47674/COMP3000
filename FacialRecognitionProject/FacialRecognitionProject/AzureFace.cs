@@ -16,7 +16,7 @@ namespace FacialRecognitionProject
         const string SUBSCRIPTION_KEY = "SUBSCRIPTION KEY GOES HERE";
         const string ENDPOINT = "END POINT GOES HERE";
         const string IMAGE_BASE_URL = "https://csdx.blob.core.windows.net/resources/Face/Images/";
-
+        static string personGroupId = Guid.NewGuid().ToString();
 
         static void AzureMain(string[] args)
         {
