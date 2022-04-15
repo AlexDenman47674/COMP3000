@@ -219,6 +219,22 @@ namespace FacialRecognitionProject
                         $"{url}{similarImage}", similarImage);
                 }
             }
+
+            // Start to train the person group.
+            Console.WriteLine();
+            Console.WriteLine($"Train person group {personGroupId}.");
+            await client.PersonGroup.TrainAsync(personGroupId);
+
+            // Wait until the training is completed.
+            while (true)
+            {
+                await Task.Delay(1000);
+                var trainingStatus = await client.PersonGroup.GetTrainingStatusAsync(personGroupId);
+                Console.WriteLine($"Training status: {trainingStatus.Status}.");
+                if (trainingStatus.Status == TrainingStatusType.Succeeded) { break; }
+            }
+            Console.WriteLine();
+
         }
     }
 }
