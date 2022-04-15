@@ -242,6 +242,17 @@ namespace FacialRecognitionProject
 
             // Add detected faceId to sourceFaceIds.
             foreach (var detectedFace in detectedFaces) { sourceFaceIds.Add(detectedFace.FaceId.Value); }
+
+            // Identify the faces in a person group. 
+            var identifyResults = await client.Face.IdentifyAsync(sourceFaceIds, personGroupId);
+
+            foreach (var identifyResult in identifyResults)
+            {
+                Person person = await client.PersonGroupPerson.GetAsync(personGroupId, identifyResult.Candidates[0].PersonId);
+                Console.WriteLine($"Person '{person.Name}' is identified for face in: {sourceImageFileName} - {identifyResult.FaceId}," +
+                    $" confidence: {identifyResult.Candidates[0].Confidence}.");
+            }
+            Console.WriteLine();
         }
     }
 }
