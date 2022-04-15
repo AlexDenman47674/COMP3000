@@ -235,6 +235,13 @@ namespace FacialRecognitionProject
             }
             Console.WriteLine();
 
+
+            List<Guid> sourceFaceIds = new List<Guid>();
+            // Detect faces from source image url.
+            List<DetectedFace> detectedFaces = await DetectFaceRecognize(client, $"{url}{sourceImageFileName}", recognitionModel);
+
+            // Add detected faceId to sourceFaceIds.
+            foreach (var detectedFace in detectedFaces) { sourceFaceIds.Add(detectedFace.FaceId.Value); }
         }
     }
 }
