@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.OleDb;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,8 +38,12 @@ namespace FacialRecognitionProject
 
         private void DatabaseForm_Load(object sender, EventArgs e)
         {
-            List<Person> source = new List<Person>();
 
+            using (StreamReader r = new StreamReader("file.json"))
+            {
+                string json = r.ReadToEnd();
+                List<Person> People = JsonConvert.DeserializeObject<List<Person>>(json);
+            }
 
             //string FileName = "Database(People).xlsx";
             ////OleDbConnection ExcelConnection = null;
