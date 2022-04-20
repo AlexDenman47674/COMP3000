@@ -26,6 +26,14 @@ namespace FacialRecognitionProject
             public int UserID { get; set; }
         }
 
+        public class Images
+        {
+            public int ImageID { get; set; }
+            public string ImageName { get; set; }
+            public string ImageFile { get; set; }
+            public int UserID { get; set; }
+        }
+
         private void DatabaseForm_Load(object sender, EventArgs e)
         {
 
