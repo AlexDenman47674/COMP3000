@@ -36,7 +36,7 @@ namespace FacialRecognitionProject
 
         private void DatabaseForm_Load(object sender, EventArgs e)
         {
-
+            List<Person> source = new List<Person>();
 
 
             //string FileName = "Database(People).xlsx";
