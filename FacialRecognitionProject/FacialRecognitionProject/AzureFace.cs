@@ -192,7 +192,7 @@ namespace FacialRecognitionProject
                 {
                     Console.WriteLine($"Check whether image is of sufficient quality for recognition");
                     IList<DetectedFace> detectedFaces = await client.Face.DetectWithUrlAsync($"{url}{similarImage}",
-                        recognitionModel: recognition_model,
+                        recognitionModel: "recognition_04",
                         detectionModel: DetectionModel.Detection03,
                         returnFaceAttributes: new List<FaceAttributeType> { FaceAttributeType.QualityForRecognition });
                     bool sufficientQuality = true;
