@@ -39,10 +39,16 @@ namespace FacialRecognitionProject
         private void DatabaseForm_Load(object sender, EventArgs e)
         {
 
-            using (StreamReader r = new StreamReader("file.json"))
+            using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json"))
             {
                 string json = r.ReadToEnd();
                 List<Person> People = JsonConvert.DeserializeObject<List<Person>>(json);
+            }
+
+            using (StreamReader r2 = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseImages.json"))
+            {
+                string json = r2.ReadToEnd();
+                List<Images> DBImages = JsonConvert.DeserializeObject<List<Images>>(json);
             }
 
             //string FileName = "Database(People).xlsx";
