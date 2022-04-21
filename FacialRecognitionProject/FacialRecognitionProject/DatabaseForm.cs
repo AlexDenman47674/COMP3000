@@ -128,5 +128,9 @@ namespace FacialRecognitionProject
 
             }
         }
+
+        private void buttonAmmend_Click(object sender, EventArgs e)
+        {
+        }
     }
 }
