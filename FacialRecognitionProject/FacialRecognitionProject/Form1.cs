@@ -18,8 +18,6 @@ namespace FacialRecognitionProject
         {
             InitializeComponent();
         }
-        List<String> AllUsernames = new List<String>();
-        List<String> AllPasswords = new List<String>();
 
         List<User> DBUsers;
 
@@ -33,10 +31,6 @@ namespace FacialRecognitionProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //AllUsernames.Add("TestUser1");
-            //AllUsernames.Add("TestUser2");
-            //AllPasswords.Add("DefaultPassword1");
-            //AllPasswords.Add("DefaultPassword2");
 
             using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json"))
             {
@@ -60,24 +54,17 @@ namespace FacialRecognitionProject
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
 
-            //for (int i = 0; i <= AllUsernames.Count-1; i++)
-            //{
-            //    for (int j = 0; j <= AllPasswords.Count-1; j++)
-            //    {
-            //        if (textBoxInputName.Text == AllUsernames[i])
-            //        {
-            //            if (i == j && textBoxInputPassword.Text == AllPasswords[j])
-            //            {
-            //                HomeForm MainForm = new HomeForm();
+            for (int i = 0; i <= DBUsers.Count-1; i++)
+            {
+                if (textBoxInputName.Text == DBUsers[i].Username && textBoxInputPassword.Text == DBUsers[i].Password)
+                {
+                    HomeForm MainForm = new HomeForm();
 
-            //                MainForm.Show();
+                    MainForm.Show();
 
-            //                this.Hide();
-            //            }
-            //        }
-            //    }
-            //}
-
+                    this.Hide();
+                }
+            }
 
         }
 
