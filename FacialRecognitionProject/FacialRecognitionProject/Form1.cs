@@ -6,6 +6,8 @@ using System.Net;
 using MySqlConnector;
 using System.Web.Mvc;
 using System.Collections.Generic;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace FacialRecognitionProject
 {
@@ -19,7 +21,7 @@ namespace FacialRecognitionProject
         List<String> AllUsernames = new List<String>();
         List<String> AllPasswords = new List<String>();
 
-        List<User> Users;
+        List<User> DBUsers;
 
         public class User
         {
@@ -36,7 +38,11 @@ namespace FacialRecognitionProject
             //AllPasswords.Add("DefaultPassword1");
             //AllPasswords.Add("DefaultPassword2");
 
-
+            using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json"))
+            {
+                string json = r.ReadToEnd();
+                DBUsers = JsonConvert.DeserializeObject<List<User>>(json);
+            }
         }
 
         private void timerPasswordCheck_Tick(object sender, EventArgs e)
