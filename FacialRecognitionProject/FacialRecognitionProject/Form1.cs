@@ -19,12 +19,24 @@ namespace FacialRecognitionProject
         List<String> AllUsernames = new List<String>();
         List<String> AllPasswords = new List<String>();
 
+        List<User> Users;
+
+        public class User
+        {
+            public int UserID { get; set; }
+            public string Username { get; set; }
+            public string Password { get; set; }
+            public int AccountType { get; set; }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
-            AllUsernames.Add("TestUser1");
-            AllUsernames.Add("TestUser2");
-            AllPasswords.Add("DefaultPassword1");
-            AllPasswords.Add("DefaultPassword2");
+            //AllUsernames.Add("TestUser1");
+            //AllUsernames.Add("TestUser2");
+            //AllPasswords.Add("DefaultPassword1");
+            //AllPasswords.Add("DefaultPassword2");
+
+
         }
 
         private void timerPasswordCheck_Tick(object sender, EventArgs e)
