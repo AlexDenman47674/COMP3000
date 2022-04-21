@@ -102,15 +102,25 @@ namespace FacialRecognitionProject
             {
                 DBPeople.Add(new Person() {PersonID = DBPeople.Count+1 , Name = textBoxPeopleName.Text, Description = textBoxDescription.Text, UserID = Convert.ToInt32(textBoxUserID.Text)});
             }
+
+            string json = JsonConvert.SerializeObject(DBPeople.ToArray());
+
+            System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json", json);
+
+            json = JsonConvert.SerializeObject(DBImages.ToArray());
+
+            System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabaseImages.json", json);
         }
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
+            string RemovedItem;
+            Images RemovedObject = new Images();
+            Person RemovedPerson = new Person();
+            int temp = 0;
+
             if (databaseViewer.DataSource == DBImages)
             {
-                string RemovedItem;
-                Images RemovedObject = new Images();
-                int temp = 0;
                 RemovedItem = textBoxImageName.Text;
                 foreach (Images i in DBImages)
                 {
@@ -125,8 +135,26 @@ namespace FacialRecognitionProject
             }
             else
             {
+                RemovedItem = textBoxPeopleName.Text;
+                foreach (Person i in DBPeople)
+                {
+                    temp += 1;
+                    if (i.Name == RemovedItem)
+                    {
+                        RemovedPerson = i;
+                    }
+                }
 
+                DBPeople.Remove(RemovedPerson);
             }
+
+            string json = JsonConvert.SerializeObject(DBPeople.ToArray());
+
+            System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json", json);
+
+            json = JsonConvert.SerializeObject(DBImages.ToArray());
+
+            System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabaseImages.json", json);
         }
 
         private void buttonAmmend_Click(object sender, EventArgs e)
