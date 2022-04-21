@@ -109,6 +109,7 @@ namespace FacialRecognitionProject
             if (databaseViewer.DataSource == DBImages)
             {
                 string RemovedItem;
+                Images RemovedObject = new Images();
                 int temp = 0;
                 RemovedItem = textBoxImageName.Text;
                 foreach (Images i in DBImages)
@@ -116,9 +117,11 @@ namespace FacialRecognitionProject
                     temp += 1;
                     if (i.ImageName == RemovedItem)
                     {
-                        DBImages.Remove(new Images() { ImageID = temp});
+                        RemovedObject = i;
                     }
                 }
+
+                DBImages.Remove(RemovedObject);
             }
             else
             {
