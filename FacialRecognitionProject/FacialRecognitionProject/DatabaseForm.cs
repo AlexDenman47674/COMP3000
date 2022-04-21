@@ -20,6 +20,9 @@ namespace FacialRecognitionProject
             InitializeComponent();
         }
 
+        List<Person> DBPeople;
+        List<Images> DBImages;
+
         public class Person
         {
             public int PersonID { get; set; }
@@ -38,8 +41,7 @@ namespace FacialRecognitionProject
 
         private void DatabaseForm_Load(object sender, EventArgs e)
         {
-            List<Person> DBPeople;
-            List<Images> DBImages;
+
 
             using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json"))
             {
@@ -53,7 +55,7 @@ namespace FacialRecognitionProject
                 DBImages = JsonConvert.DeserializeObject<List<Images>>(json);
             }
 
-            databaseViewer.DataSource = DBPeople;
+            databaseViewer.DataSource = DBImages;
 
             //string FileName = "Database(People).xlsx";
             ////OleDbConnection ExcelConnection = null;
@@ -85,6 +87,18 @@ namespace FacialRecognitionProject
         private void databaseViewer_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void buttonSwitchTable_Click(object sender, EventArgs e)
+        {
+            if (databaseViewer.DataSource == DBImages)
+            {
+                databaseViewer.DataSource = DBPeople;
+            }
+            else
+            {
+                databaseViewer.DataSource = DBImages;
+            }
         }
     }
 }
