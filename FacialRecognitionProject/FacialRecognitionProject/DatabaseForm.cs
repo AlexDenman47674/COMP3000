@@ -91,5 +91,17 @@ namespace FacialRecognitionProject
                 textBoxPersonID.Enabled = true;
             }
         }
+
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            if (databaseViewer.DataSource == DBImages)
+            {
+                DBImages.Add(new Images() {ImageID = DBImages.Count+1 , ImageName = textBoxImageName.Text, ImageFile = textBoxImageFile.Text, UserID = Convert.ToInt32(textBoxPersonID.Text)});
+            }
+            else
+            {
+                DBPeople.Add();
+            }
+        }
     }
 }
