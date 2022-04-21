@@ -1,4 +1,6 @@
 ﻿using System;
+using Newtonsoft.Json;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,14 @@ namespace FacialRecognitionProject
         public SignUpForm()
         {
             InitializeComponent();
+        }
+
+        public class User
+        {
+            public int UserID { get; set; }
+            public string Username { get; set; }
+            public string Password { get; set; }
+            public int AccountType { get; set; }
         }
 
         private void timerSignUp_Tick(object sender, EventArgs e)
