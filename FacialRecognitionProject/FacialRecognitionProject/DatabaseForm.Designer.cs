@@ -33,29 +33,29 @@
             this.databaseViewer = new System.Windows.Forms.DataGridView();
             this.dataSet1 = new System.Data.DataSet();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.buttonSwitchTable = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonRemove = new System.Windows.Forms.Button();
-            this.buttonAmmend = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBoxImageName = new System.Windows.Forms.TextBox();
-            this.textBoxImageFile = new System.Windows.Forms.TextBox();
-            this.textBoxPersonID = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBoxPeopleName = new System.Windows.Forms.TextBox();
-            this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.textBoxUserID = new System.Windows.Forms.TextBox();
+            this.textBoxDescription = new System.Windows.Forms.TextBox();
+            this.textBoxPeopleName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxPersonID = new System.Windows.Forms.TextBox();
+            this.textBoxImageFile = new System.Windows.Forms.TextBox();
+            this.textBoxImageName = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonAmmend = new System.Windows.Forms.Button();
+            this.buttonRemove = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonSwitchTable = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.databaseViewer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelCurrentUser
@@ -82,9 +82,7 @@
             // 
             // databaseViewer
             // 
-            this.databaseViewer.AutoGenerateColumns = false;
             this.databaseViewer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.databaseViewer.DataSource = this.dataSet1;
             this.databaseViewer.Location = new System.Drawing.Point(56, 62);
             this.databaseViewer.Name = "databaseViewer";
             this.databaseViewer.Size = new System.Drawing.Size(886, 451);
@@ -111,49 +109,68 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Controls";
             // 
-            // buttonSwitchTable
+            // groupBox3
             // 
-            this.buttonSwitchTable.BackColor = System.Drawing.Color.White;
-            this.buttonSwitchTable.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSwitchTable.Location = new System.Drawing.Point(6, 195);
-            this.buttonSwitchTable.Name = "buttonSwitchTable";
-            this.buttonSwitchTable.Size = new System.Drawing.Size(202, 32);
-            this.buttonSwitchTable.TabIndex = 0;
-            this.buttonSwitchTable.Text = "Switch Table";
-            this.buttonSwitchTable.UseVisualStyleBackColor = false;
+            this.groupBox3.Controls.Add(this.textBoxUserID);
+            this.groupBox3.Controls.Add(this.textBoxDescription);
+            this.groupBox3.Controls.Add(this.textBoxPeopleName);
+            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.label6);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Location = new System.Drawing.Point(470, 36);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(408, 153);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "People Table";
             // 
-            // buttonAdd
+            // textBoxUserID
             // 
-            this.buttonAdd.BackColor = System.Drawing.Color.White;
-            this.buttonAdd.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAdd.Location = new System.Drawing.Point(214, 195);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(202, 32);
-            this.buttonAdd.TabIndex = 1;
-            this.buttonAdd.Text = "Add to Table";
-            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.textBoxUserID.Location = new System.Drawing.Point(117, 113);
+            this.textBoxUserID.Name = "textBoxUserID";
+            this.textBoxUserID.Size = new System.Drawing.Size(285, 37);
+            this.textBoxUserID.TabIndex = 6;
             // 
-            // buttonRemove
+            // textBoxDescription
             // 
-            this.buttonRemove.BackColor = System.Drawing.Color.White;
-            this.buttonRemove.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonRemove.Location = new System.Drawing.Point(470, 195);
-            this.buttonRemove.Name = "buttonRemove";
-            this.buttonRemove.Size = new System.Drawing.Size(202, 32);
-            this.buttonRemove.TabIndex = 2;
-            this.buttonRemove.Text = "Remove from Table";
-            this.buttonRemove.UseVisualStyleBackColor = false;
+            this.textBoxDescription.Location = new System.Drawing.Point(117, 70);
+            this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.Size = new System.Drawing.Size(285, 37);
+            this.textBoxDescription.TabIndex = 5;
             // 
-            // buttonAmmend
+            // textBoxPeopleName
             // 
-            this.buttonAmmend.BackColor = System.Drawing.Color.White;
-            this.buttonAmmend.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonAmmend.Location = new System.Drawing.Point(678, 195);
-            this.buttonAmmend.Name = "buttonAmmend";
-            this.buttonAmmend.Size = new System.Drawing.Size(202, 32);
-            this.buttonAmmend.TabIndex = 3;
-            this.buttonAmmend.Text = "Ammend Current Fields";
-            this.buttonAmmend.UseVisualStyleBackColor = false;
+            this.textBoxPeopleName.Location = new System.Drawing.Point(117, 25);
+            this.textBoxPeopleName.Name = "textBoxPeopleName";
+            this.textBoxPeopleName.Size = new System.Drawing.Size(285, 37);
+            this.textBoxPeopleName.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 121);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(67, 29);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "User ID:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 78);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(95, 29);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Description:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 33);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 29);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Name:";
             // 
             // groupBox2
             // 
@@ -170,38 +187,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Images Table";
             // 
-            // groupBox3
+            // textBoxPersonID
             // 
-            this.groupBox3.Controls.Add(this.textBoxUserID);
-            this.groupBox3.Controls.Add(this.textBoxDescription);
-            this.groupBox3.Controls.Add(this.textBoxPeopleName);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Location = new System.Drawing.Point(470, 36);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(408, 153);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "People Table";
+            this.textBoxPersonID.Location = new System.Drawing.Point(117, 113);
+            this.textBoxPersonID.Name = "textBoxPersonID";
+            this.textBoxPersonID.Size = new System.Drawing.Size(285, 37);
+            this.textBoxPersonID.TabIndex = 6;
             // 
-            // label1
+            // textBoxImageFile
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Image Name:";
+            this.textBoxImageFile.Location = new System.Drawing.Point(117, 70);
+            this.textBoxImageFile.Name = "textBoxImageFile";
+            this.textBoxImageFile.Size = new System.Drawing.Size(285, 37);
+            this.textBoxImageFile.TabIndex = 4;
             // 
-            // label3
+            // textBoxImageName
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 78);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 29);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Image File:";
+            this.textBoxImageName.Location = new System.Drawing.Point(117, 25);
+            this.textBoxImageName.Name = "textBoxImageName";
+            this.textBoxImageName.Size = new System.Drawing.Size(285, 37);
+            this.textBoxImageName.TabIndex = 3;
             // 
             // label4
             // 
@@ -212,74 +217,67 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Person ID:";
             // 
-            // textBoxImageName
+            // label3
             // 
-            this.textBoxImageName.Location = new System.Drawing.Point(117, 25);
-            this.textBoxImageName.Name = "textBoxImageName";
-            this.textBoxImageName.Size = new System.Drawing.Size(285, 37);
-            this.textBoxImageName.TabIndex = 3;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 78);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(87, 29);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Image File:";
             // 
-            // textBoxImageFile
+            // label1
             // 
-            this.textBoxImageFile.Location = new System.Drawing.Point(117, 70);
-            this.textBoxImageFile.Name = "textBoxImageFile";
-            this.textBoxImageFile.Size = new System.Drawing.Size(285, 37);
-            this.textBoxImageFile.TabIndex = 4;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 33);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Image Name:";
             // 
-            // textBoxPersonID
+            // buttonAmmend
             // 
-            this.textBoxPersonID.Location = new System.Drawing.Point(117, 113);
-            this.textBoxPersonID.Name = "textBoxPersonID";
-            this.textBoxPersonID.Size = new System.Drawing.Size(285, 37);
-            this.textBoxPersonID.TabIndex = 6;
+            this.buttonAmmend.BackColor = System.Drawing.Color.White;
+            this.buttonAmmend.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAmmend.Location = new System.Drawing.Point(678, 195);
+            this.buttonAmmend.Name = "buttonAmmend";
+            this.buttonAmmend.Size = new System.Drawing.Size(202, 32);
+            this.buttonAmmend.TabIndex = 3;
+            this.buttonAmmend.Text = "Ammend Current Fields";
+            this.buttonAmmend.UseVisualStyleBackColor = false;
             // 
-            // label5
+            // buttonRemove
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 33);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 29);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Name:";
+            this.buttonRemove.BackColor = System.Drawing.Color.White;
+            this.buttonRemove.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRemove.Location = new System.Drawing.Point(470, 195);
+            this.buttonRemove.Name = "buttonRemove";
+            this.buttonRemove.Size = new System.Drawing.Size(202, 32);
+            this.buttonRemove.TabIndex = 2;
+            this.buttonRemove.Text = "Remove from Table";
+            this.buttonRemove.UseVisualStyleBackColor = false;
             // 
-            // label6
+            // buttonAdd
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 78);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(95, 29);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Description:";
+            this.buttonAdd.BackColor = System.Drawing.Color.White;
+            this.buttonAdd.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd.Location = new System.Drawing.Point(214, 195);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(202, 32);
+            this.buttonAdd.TabIndex = 1;
+            this.buttonAdd.Text = "Add to Table";
+            this.buttonAdd.UseVisualStyleBackColor = false;
             // 
-            // label7
+            // buttonSwitchTable
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 121);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 29);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "User ID:";
-            // 
-            // textBoxPeopleName
-            // 
-            this.textBoxPeopleName.Location = new System.Drawing.Point(117, 25);
-            this.textBoxPeopleName.Name = "textBoxPeopleName";
-            this.textBoxPeopleName.Size = new System.Drawing.Size(285, 37);
-            this.textBoxPeopleName.TabIndex = 4;
-            // 
-            // textBoxDescription
-            // 
-            this.textBoxDescription.Location = new System.Drawing.Point(117, 70);
-            this.textBoxDescription.Name = "textBoxDescription";
-            this.textBoxDescription.Size = new System.Drawing.Size(285, 37);
-            this.textBoxDescription.TabIndex = 5;
-            // 
-            // textBoxUserID
-            // 
-            this.textBoxUserID.Location = new System.Drawing.Point(117, 113);
-            this.textBoxUserID.Name = "textBoxUserID";
-            this.textBoxUserID.Size = new System.Drawing.Size(285, 37);
-            this.textBoxUserID.TabIndex = 6;
+            this.buttonSwitchTable.BackColor = System.Drawing.Color.White;
+            this.buttonSwitchTable.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSwitchTable.Location = new System.Drawing.Point(6, 195);
+            this.buttonSwitchTable.Name = "buttonSwitchTable";
+            this.buttonSwitchTable.Size = new System.Drawing.Size(202, 32);
+            this.buttonSwitchTable.TabIndex = 0;
+            this.buttonSwitchTable.Text = "Switch Table";
+            this.buttonSwitchTable.UseVisualStyleBackColor = false;
             // 
             // DatabaseForm
             // 
@@ -298,10 +296,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.databaseViewer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.groupBox1.ResumeLayout(false);
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

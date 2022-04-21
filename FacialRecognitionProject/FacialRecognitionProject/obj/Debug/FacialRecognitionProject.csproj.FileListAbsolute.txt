@@ -44,3 +44,10 @@ D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\F
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.UserSettingsForm.resources
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.PasswordForm.resources
 D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\obj\Debug\FacialRecognitionProject.SignUpForm.resources
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\Microsoft.Azure.CognitiveServices.Vision.Face.dll
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.dll
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\Microsoft.Rest.ClientRuntime.dll
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\Newtonsoft.Json.dll
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\Microsoft.Rest.ClientRuntime.xml
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\Microsoft.Rest.ClientRuntime.Azure.xml
+D:\Github\COMP3000\FacialRecognitionProject\FacialRecognitionProject\bin\Debug\Newtonsoft.Json.xml
