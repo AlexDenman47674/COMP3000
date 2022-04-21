@@ -103,5 +103,27 @@ namespace FacialRecognitionProject
                 DBPeople.Add(new Person() {PersonID = DBPeople.Count+1 , Name = textBoxPeopleName.Text, Description = textBoxDescription.Text, UserID = Convert.ToInt32(textBoxUserID.Text)});
             }
         }
+
+        private void buttonRemove_Click(object sender, EventArgs e)
+        {
+            if (databaseViewer.DataSource == DBImages)
+            {
+                string RemovedItem;
+                int temp = 0;
+                RemovedItem = textBoxImageName.Text;
+                foreach (Images i in DBImages)
+                {
+                    temp += 1;
+                    if (i.ImageName == RemovedItem)
+                    {
+                        DBImages.Remove(new Images() { ImageID = temp});
+                    }
+                }
+            }
+            else
+            {
+
+            }
+        }
     }
 }
