@@ -36,7 +36,7 @@ namespace FacialRecognitionProject
             public int ImageID { get; set; }
             public string ImageName { get; set; }
             public string ImageFile { get; set; }
-            public int UserID { get; set; }
+            public int PersonID { get; set; }
         }
 
         private void DatabaseForm_Load(object sender, EventArgs e)
@@ -96,11 +96,11 @@ namespace FacialRecognitionProject
         {
             if (databaseViewer.DataSource == DBImages)
             {
-                DBImages.Add(new Images() {ImageID = DBImages.Count+1 , ImageName = textBoxImageName.Text, ImageFile = textBoxImageFile.Text, UserID = Convert.ToInt32(textBoxPersonID.Text)});
+                DBImages.Add(new Images() {ImageID = DBImages.Count+1 , ImageName = textBoxImageName.Text, ImageFile = textBoxImageFile.Text, PersonID = Convert.ToInt32(textBoxPersonID.Text)});
             }
             else
             {
-                DBPeople.Add();
+                DBPeople.Add(new Person() {PersonID = DBPeople.Count+1 , Name = textBoxPeopleName.Text, Description = textBoxDescription.Text, UserID = Convert.ToInt32(textBoxUserID.Text)});
             }
         }
     }
