@@ -27,6 +27,8 @@ namespace FacialRecognitionProject
             public int AccountType { get; set; }
         }
 
+        List<User> DBUsers;
+
         private void timerSignUp_Tick(object sender, EventArgs e)
         {
             if (checkBoxShowPassword.Checked == true)
@@ -41,11 +43,29 @@ namespace FacialRecognitionProject
 
         private void buttonSignUp_Click(object sender, EventArgs e)
         {
-            HomeForm MainForm = new HomeForm();
+            if (textBoxInputUsername != null && textBoxInputPassword != null)
+            {
+                DBUsers.Add(new User() {UserID = DBUsers.Count+1, Username = textBoxInputUsername.Text, Password = textBoxInputPassword.Text, AccountType = 2 });
+                string json = JsonConvert.SerializeObject(DBUsers.ToArray());
 
-            MainForm.Show();
+                System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json", json);
 
-            this.Close();
+                HomeForm MainForm = new HomeForm();
+
+                MainForm.Show();
+
+                this.Close();
+            }
+
+        }
+
+        private void SignUpForm_Load(object sender, EventArgs e)
+        {
+            using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json"))
+            {
+                string json = r.ReadToEnd();
+                DBUsers = JsonConvert.DeserializeObject<List<User>>(json);
+            }
         }
     }
 }
