@@ -57,31 +57,6 @@ namespace FacialRecognitionProject
 
             databaseViewer.DataSource = DBImages;
 
-            //string FileName = "Database(People).xlsx";
-            ////OleDbConnection ExcelConnection = null;
-            //System.Data.OleDb.OleDbConnection ExcelConnection;
-            //ExcelConnection = null;
-            //string filePath = "C:/Users/Alex/Desktop/COMP3000/";
-            //DataTable dtNew = new DataTable();
-            //ExcelConnection = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + "'" + filePath + FileName + "'" + ";Extended Properties=Excel 8.0;");
-            //try
-            //{
-            //    ExcelConnection.Open();
-            //    DataTable dt = ExcelConnection.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
-            //    System.Data.OleDb.OleDbCommand ExcelCommand = new OleDbCommand(@"SELECT * FROM [" + "Sheet1" + @"]", ExcelConnection);
-            //    OleDbDataAdapter ExcelAdapter = new OleDbDataAdapter(ExcelCommand);
-            //    DataSet ExcelDataSet = new DataSet();
-            //    ExcelAdapter.Fill(dataSet1);
-            //    ExcelConnection.Close();
-
-            //}
-            //catch (Exception ex)
-            //{
-
-            //}
-            //finally
-            //{
-            //}
         }
 
         private void databaseViewer_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -94,10 +69,26 @@ namespace FacialRecognitionProject
             if (databaseViewer.DataSource == DBImages)
             {
                 databaseViewer.DataSource = DBPeople;
+
+                textBoxPeopleName.Enabled = true;
+                textBoxDescription.Enabled = true;
+                textBoxUserID.Enabled = true;
+
+                textBoxImageName.Enabled = false;
+                textBoxImageFile.Enabled = false;
+                textBoxPersonID.Enabled = false;
             }
             else
             {
                 databaseViewer.DataSource = DBImages;
+
+                textBoxPeopleName.Enabled = false;
+                textBoxDescription.Enabled = false;
+                textBoxUserID.Enabled = false;
+
+                textBoxImageName.Enabled = true;
+                textBoxImageFile.Enabled = true;
+                textBoxPersonID.Enabled = true;
             }
         }
     }
