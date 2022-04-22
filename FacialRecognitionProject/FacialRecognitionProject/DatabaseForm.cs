@@ -68,9 +68,9 @@ namespace FacialRecognitionProject
 
             databaseViewer.DataSource = DBImages;
 
-            using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json"))
+            using (StreamReader r3 = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json"))
             {
-                string json = r.ReadToEnd();
+                string json = r3.ReadToEnd();
                 DBUsers = JsonConvert.DeserializeObject<List<User>>(json);
             }
 

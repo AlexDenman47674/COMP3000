@@ -50,6 +50,7 @@
             this.buttonClearData.TabIndex = 1;
             this.buttonClearData.Text = "Clear the Database";
             this.buttonClearData.UseVisualStyleBackColor = false;
+            this.buttonClearData.Click += new System.EventHandler(this.buttonClearData_Click);
             // 
             // buttonChangePassword
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,34 @@ namespace FacialRecognitionProject
 {
     public partial class UserSettingsForm : Form
     {
+        public class Person
+        {
+            public int PersonID { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public int UserID { get; set; }
+        }
+
+        public class Images
+        {
+            public int ImageID { get; set; }
+            public string ImageName { get; set; }
+            public string ImageFile { get; set; }
+            public int PersonID { get; set; }
+        }
+
+        public class User
+        {
+            public int UserID { get; set; }
+            public string Username { get; set; }
+            public string Password { get; set; }
+            public int AccountType { get; set; }
+        }
+
+        List<Person> DBPeople;
+        List<Images> DBImages;
+        List<User> DBUsers;
+
         HomeForm MainForm = new HomeForm();
         public UserSettingsForm()
         {
@@ -54,6 +83,29 @@ namespace FacialRecognitionProject
             }
                 MainForm.Show();
             this.Close();
+        }
+
+        private void buttonClearData_Click(object sender, EventArgs e)
+        {
+            using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json"))
+            {
+                string json = r.ReadToEnd();
+                DBPeople = JsonConvert.DeserializeObject<List<Person>>(json);
+            }
+
+            using (StreamReader r2 = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseImages.json"))
+            {
+                string json = r2.ReadToEnd();
+                DBImages = JsonConvert.DeserializeObject<List<Images>>(json);
+            }
+
+            using (StreamReader r3 = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json"))
+            {
+                string json = r3.ReadToEnd();
+                DBUsers = JsonConvert.DeserializeObject<List<User>>(json);
+            }
+
+
         }
     }
 }
