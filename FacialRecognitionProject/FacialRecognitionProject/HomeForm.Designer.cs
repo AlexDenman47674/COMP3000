@@ -39,6 +39,7 @@
             this.buttonSettings = new System.Windows.Forms.Button();
             this.buttonDatabase = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonUpdateWeb = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.labelCurrentDate = new System.Windows.Forms.Label();
@@ -46,7 +47,6 @@
             this.labelCurrentTime = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.timerDateTime = new System.Windows.Forms.Timer(this.components);
-            this.buttonUpdateWeb = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -175,6 +175,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Home";
             // 
+            // buttonUpdateWeb
+            // 
+            this.buttonUpdateWeb.BackColor = System.Drawing.Color.White;
+            this.buttonUpdateWeb.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdateWeb.Location = new System.Drawing.Point(479, 500);
+            this.buttonUpdateWeb.Name = "buttonUpdateWeb";
+            this.buttonUpdateWeb.Size = new System.Drawing.Size(88, 28);
+            this.buttonUpdateWeb.TabIndex = 6;
+            this.buttonUpdateWeb.Text = "Update";
+            this.buttonUpdateWeb.UseVisualStyleBackColor = false;
+            this.buttonUpdateWeb.Click += new System.EventHandler(this.buttonUpdateWeb_Click);
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -239,18 +251,6 @@
             this.timerDateTime.Enabled = true;
             this.timerDateTime.Tick += new System.EventHandler(this.timerDateTime_Tick);
             // 
-            // buttonUpdateWeb
-            // 
-            this.buttonUpdateWeb.BackColor = System.Drawing.Color.White;
-            this.buttonUpdateWeb.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUpdateWeb.Location = new System.Drawing.Point(479, 500);
-            this.buttonUpdateWeb.Name = "buttonUpdateWeb";
-            this.buttonUpdateWeb.Size = new System.Drawing.Size(88, 28);
-            this.buttonUpdateWeb.TabIndex = 6;
-            this.buttonUpdateWeb.Text = "Update";
-            this.buttonUpdateWeb.UseVisualStyleBackColor = false;
-            this.buttonUpdateWeb.Click += new System.EventHandler(this.buttonUpdateWeb_Click);
-            // 
             // HomeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +267,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "HomeForm";
             this.Text = "Home";
+            this.Load += new System.EventHandler(this.HomeForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);

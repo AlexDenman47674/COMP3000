@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace FacialRecognitionProject
 {
@@ -39,6 +41,16 @@ namespace FacialRecognitionProject
                 if (CurrentUser != value)
                     CurrentUser = value;
             }
+        }
+
+        List<User> DBUsers;
+
+        public class User
+        {
+            public int UserID { get; set; }
+            public string Username { get; set; }
+            public string Password { get; set; }
+            public int AccountType { get; set; }
         }
 
         public HomeForm()
@@ -87,6 +99,17 @@ namespace FacialRecognitionProject
         private void buttonUpdateWeb_Click(object sender, EventArgs e)
         {
             webBrowser1.Navigate(new Uri(MyURL));
+        }
+
+        private void HomeForm_Load(object sender, EventArgs e)
+        {
+            using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json"))
+            {
+                string json = r.ReadToEnd();
+                DBUsers = JsonConvert.DeserializeObject<List<User>>(json);
+            }
+
+            labelCurrentUser.Text = DBUsers[MyUser].Username;
         }
     }
 }
