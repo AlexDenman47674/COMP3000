@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,8 +48,11 @@ namespace FacialRecognitionProject
         {
             InputURL = textBoxInputWebsite.Text;
 
-            MainForm.MyURL = InputURL;
-            MainForm.Show();
+            using (StreamWriter writer = new StreamWriter("C:/Users/Alex/Desktop/COMP3000/BookmarkedWebsite.txt"))
+            {
+                writer.WriteLine(InputURL);
+            }
+                MainForm.Show();
             this.Close();
         }
     }

@@ -97,7 +97,7 @@ namespace FacialRecognitionProject
 
         private void buttonUpdateWeb_Click(object sender, EventArgs e)
         {
-            webBrowser1.Navigate(new Uri(MyURL));
+            
         }
 
         private void HomeForm_Load(object sender, EventArgs e)
@@ -110,7 +110,7 @@ namespace FacialRecognitionProject
 
             labelCurrentUser.Text = DBUsers[MyUser].Username;
 
-            FavURL = System.IO.File.ReadAllText(@"C:\Users/Alex/Desktop/COMP3000/BookmarkedWebsite.txt");
+            FavURL = System.IO.File.ReadAllText(@"C:/Users/Alex/Desktop/COMP3000/BookmarkedWebsite.txt");
             webBrowser1.Navigate(new Uri(MyURL));
         }
     }
