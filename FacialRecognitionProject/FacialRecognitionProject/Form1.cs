@@ -60,7 +60,7 @@ namespace FacialRecognitionProject
                 {
                     HomeForm MainForm = new HomeForm();
 
-                    MainForm.MyUser = DBUsers[i].UserID;
+                    MainForm.MyUser = i;
 
                     MainForm.Show();
 

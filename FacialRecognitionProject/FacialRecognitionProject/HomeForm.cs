@@ -13,7 +13,7 @@ namespace FacialRecognitionProject
     public partial class HomeForm : Form
     {
         string FavURL = "https://www.bbc.co.uk/weather";
-        int CurrentUser = 1;
+        int CurrentUser = 0;
 
         public string MyURL
         {
