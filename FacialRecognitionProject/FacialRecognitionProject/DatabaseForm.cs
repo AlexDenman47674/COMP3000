@@ -15,6 +15,7 @@ namespace FacialRecognitionProject
 {
     public partial class DatabaseForm : Form
     {
+        HomeForm MainForm = new HomeForm();
         public DatabaseForm()
         {
             InitializeComponent();
@@ -39,6 +40,16 @@ namespace FacialRecognitionProject
             public int PersonID { get; set; }
         }
 
+        List<User> DBUsers;
+
+        public class User
+        {
+            public int UserID { get; set; }
+            public string Username { get; set; }
+            public string Password { get; set; }
+            public int AccountType { get; set; }
+        }
+
         private void DatabaseForm_Load(object sender, EventArgs e)
         {
 
@@ -57,7 +68,13 @@ namespace FacialRecognitionProject
 
             databaseViewer.DataSource = DBImages;
 
-            //Code Here
+            using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json"))
+            {
+                string json = r.ReadToEnd();
+                DBUsers = JsonConvert.DeserializeObject<List<User>>(json);
+            }
+
+            labelCurrentUser.Text = DBUsers[MainForm.MyUser].Username;
 
         }
 
