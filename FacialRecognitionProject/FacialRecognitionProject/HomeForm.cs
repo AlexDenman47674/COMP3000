@@ -14,7 +14,7 @@ namespace FacialRecognitionProject
 {
     public partial class HomeForm : Form
     {
-        string FavURL = "https://www.bbc.co.uk/weather";
+        string FavURL;
         int CurrentUser = 0;
 
         public string MyURL
@@ -56,7 +56,6 @@ namespace FacialRecognitionProject
         public HomeForm()
         {
             InitializeComponent();
-            webBrowser1.Navigate(new Uri(MyURL));
         }
 
 
@@ -110,6 +109,9 @@ namespace FacialRecognitionProject
             }
 
             labelCurrentUser.Text = DBUsers[MyUser].Username;
+
+            FavURL = System.IO.File.ReadAllText(@"C:\Users/Alex/Desktop/COMP3000/BookmarkedWebsite.txt");
+            webBrowser1.Navigate(new Uri(MyURL));
         }
     }
 }
