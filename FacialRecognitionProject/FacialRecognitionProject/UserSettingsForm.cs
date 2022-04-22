@@ -97,6 +97,17 @@ namespace FacialRecognitionProject
             json2 = JsonConvert.SerializeObject(DBImages.ToArray());
 
             System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabaseImagesBackup.json", json2);
+
+            DBPeople.Clear();
+            DBImages.Clear();
+
+            json2 = JsonConvert.SerializeObject(DBPeople.ToArray());
+
+            System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json", json2);
+
+            json2 = JsonConvert.SerializeObject(DBImages.ToArray());
+
+            System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabaseImages.json", json2);
         }
     }
 }
