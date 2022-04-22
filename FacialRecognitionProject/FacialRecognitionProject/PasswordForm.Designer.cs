@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBoxPrevPassword = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBoxNewPassword = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBoxConfirmPassword = new System.Windows.Forms.TextBox();
             this.buttonChangePassword = new System.Windows.Forms.Button();
+            this.textBoxConfirmPassword = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBoxNewPassword = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxPrevPassword = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,54 +56,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Change your Password";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 58);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(147, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Previous Password:";
-            // 
-            // textBoxPrevPassword
-            // 
-            this.textBoxPrevPassword.Location = new System.Drawing.Point(159, 50);
-            this.textBoxPrevPassword.Name = "textBoxPrevPassword";
-            this.textBoxPrevPassword.Size = new System.Drawing.Size(344, 37);
-            this.textBoxPrevPassword.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(119, 29);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "New Password:";
-            // 
-            // textBoxNewPassword
-            // 
-            this.textBoxNewPassword.Location = new System.Drawing.Point(159, 106);
-            this.textBoxNewPassword.Name = "textBoxNewPassword";
-            this.textBoxNewPassword.Size = new System.Drawing.Size(344, 37);
-            this.textBoxNewPassword.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 170);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 29);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Conform Password:";
-            // 
-            // textBoxConfirmPassword
-            // 
-            this.textBoxConfirmPassword.Location = new System.Drawing.Point(159, 162);
-            this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
-            this.textBoxConfirmPassword.Size = new System.Drawing.Size(344, 37);
-            this.textBoxConfirmPassword.TabIndex = 5;
-            // 
             // buttonChangePassword
             // 
             this.buttonChangePassword.BackColor = System.Drawing.Color.White;
@@ -116,6 +68,54 @@
             this.buttonChangePassword.UseVisualStyleBackColor = false;
             this.buttonChangePassword.Click += new System.EventHandler(this.buttonChangePassword_Click);
             // 
+            // textBoxConfirmPassword
+            // 
+            this.textBoxConfirmPassword.Location = new System.Drawing.Point(159, 162);
+            this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
+            this.textBoxConfirmPassword.Size = new System.Drawing.Size(344, 37);
+            this.textBoxConfirmPassword.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 170);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(149, 29);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Conform Password:";
+            // 
+            // textBoxNewPassword
+            // 
+            this.textBoxNewPassword.Location = new System.Drawing.Point(159, 106);
+            this.textBoxNewPassword.Name = "textBoxNewPassword";
+            this.textBoxNewPassword.Size = new System.Drawing.Size(344, 37);
+            this.textBoxNewPassword.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(119, 29);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "New Password:";
+            // 
+            // textBoxPrevPassword
+            // 
+            this.textBoxPrevPassword.Location = new System.Drawing.Point(159, 50);
+            this.textBoxPrevPassword.Name = "textBoxPrevPassword";
+            this.textBoxPrevPassword.Size = new System.Drawing.Size(344, 37);
+            this.textBoxPrevPassword.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(147, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Previous Password:";
+            // 
             // PasswordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -127,6 +127,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "PasswordForm";
             this.Text = "Update Password";
+            this.Load += new System.EventHandler(this.PasswordForm_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
