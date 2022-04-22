@@ -30,17 +30,8 @@ namespace FacialRecognitionProject
             public int PersonID { get; set; }
         }
 
-        public class User
-        {
-            public int UserID { get; set; }
-            public string Username { get; set; }
-            public string Password { get; set; }
-            public int AccountType { get; set; }
-        }
-
         List<Person> DBPeople;
         List<Images> DBImages;
-        List<User> DBUsers;
 
         HomeForm MainForm = new HomeForm();
         public UserSettingsForm()
@@ -99,13 +90,13 @@ namespace FacialRecognitionProject
                 DBImages = JsonConvert.DeserializeObject<List<Images>>(json);
             }
 
-            using (StreamReader r3 = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json"))
-            {
-                string json = r3.ReadToEnd();
-                DBUsers = JsonConvert.DeserializeObject<List<User>>(json);
-            }
+            string json2 = JsonConvert.SerializeObject(DBPeople.ToArray());
 
+            System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabasePeopleBackup.json", json2);
 
+            json2 = JsonConvert.SerializeObject(DBImages.ToArray());
+
+            System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabaseImagesBackup.json", json2);
         }
     }
 }
