@@ -35,15 +35,21 @@ namespace FacialRecognitionProject
             {
                 for (int i = 0; i <= DBUsers.Count-1; i++)
                 {
-                    if (textBoxPrevPassword.Text == DBUsers[MainForm.MyUser].Password)
+                    if (textBoxPrevPassword.Text == DBUsers[MainForm.MyUser].Password && textBoxNewPassword.Text == textBoxConfirmPassword.Text)
                     {
+                        DBUsers[MainForm.MyUser].Password = textBoxNewPassword.Text;
 
+                        MainForm.Show();
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Passwords do not match, please try again");
                     }
                 }
 
-                MainForm.Show();
 
-                this.Close();
             }
 
         }
