@@ -14,6 +14,7 @@ namespace FacialRecognitionProject
 {
     public partial class SignUpForm : Form
     {
+        HomeForm MainForm = new HomeForm();
         public SignUpForm()
         {
             InitializeComponent();

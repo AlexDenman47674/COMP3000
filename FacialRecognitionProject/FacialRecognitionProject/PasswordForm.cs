@@ -14,6 +14,7 @@ namespace FacialRecognitionProject
 {
     public partial class PasswordForm : Form
     {
+        HomeForm MainForm = new HomeForm();
         public PasswordForm()
         {
             InitializeComponent();
@@ -30,11 +31,21 @@ namespace FacialRecognitionProject
 
         private void buttonChangePassword_Click(object sender, EventArgs e)
         {
-            HomeForm MainForm = new HomeForm();
+            if (textBoxPrevPassword.Text != null && textBoxNewPassword.Text != null && textBoxConfirmPassword.Text != null)
+            {
+                for (int i = 0; i <= DBUsers.Count-1; i++)
+                {
+                    if (textBoxPrevPassword.Text == DBUsers[MainForm.MyUser].Password)
+                    {
 
-            MainForm.Show();
+                    }
+                }
 
-            this.Close();
+                MainForm.Show();
+
+                this.Close();
+            }
+
         }
 
         private void PasswordForm_Load(object sender, EventArgs e)

@@ -13,6 +13,7 @@ namespace FacialRecognitionProject
     public partial class HomeForm : Form
     {
         string FavURL = "https://www.bbc.co.uk/weather";
+        int CurrentUser = 1;
 
         public string MyURL
         {
@@ -24,6 +25,19 @@ namespace FacialRecognitionProject
             {
                 if (FavURL != value)
                     FavURL = value;
+            }
+        }
+
+        public int MyUser
+        {
+            get
+            {
+                return CurrentUser;
+            }
+            set
+            {
+                if (CurrentUser != value)
+                    CurrentUser = value;
             }
         }
 
