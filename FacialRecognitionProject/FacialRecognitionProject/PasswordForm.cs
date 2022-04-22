@@ -38,6 +38,9 @@ namespace FacialRecognitionProject
                     if (textBoxPrevPassword.Text == DBUsers[MainForm.MyUser].Password && textBoxNewPassword.Text == textBoxConfirmPassword.Text)
                     {
                         DBUsers[MainForm.MyUser].Password = textBoxNewPassword.Text;
+                        string json = JsonConvert.SerializeObject(DBUsers.ToArray());
+
+                        System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json", json);
 
                         MainForm.Show();
 
