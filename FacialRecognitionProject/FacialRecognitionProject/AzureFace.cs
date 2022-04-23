@@ -8,6 +8,7 @@ using System.Threading;
 using Newtonsoft.Json;
 using Microsoft.Azure.CognitiveServices.Vision.Face;
 using Microsoft.Azure.CognitiveServices.Vision.Face.Models;
+using System.Windows.Forms;
 
 namespace FacialRecognitionProject
 {
@@ -59,8 +60,7 @@ namespace FacialRecognitionProject
         */
         public static async Task DetectFaceExtract(IFaceClient client, string url, string recognitionModel)
         {
-            Console.WriteLine("========DETECT FACES========");
-            Console.WriteLine();
+            MessageBox.Show("Detect Faces Method In Progress");
 
             // Create a list of images
             List<string> imageFileNames = new List<string>
@@ -88,15 +88,15 @@ namespace FacialRecognitionProject
                         detectionModel: DetectionModel.Detection01,
                         recognitionModel: recognitionModel);
 
-                Console.WriteLine($"{detectedFaces.Count} face(s) detected from image `{imageFileName}`.");
+                MessageBox.Show($"{detectedFaces.Count} face(s) detected from image `{imageFileName}`.");
 
                 // Parse and print all attributes of each detected face.
                 foreach (var face in detectedFaces)
                 {
-                    Console.WriteLine($"Face attributes for {imageFileName}:");
+                    MessageBox.Show($"Face attributes for {imageFileName}:");
 
                     // Get bounding box of the faces
-                    Console.WriteLine($"Rectangle(Left/Top/Width/Height) : {face.FaceRectangle.Left} {face.FaceRectangle.Top} {face.FaceRectangle.Width} {face.FaceRectangle.Height}");
+                    MessageBox.Show($"Rectangle(Left/Top/Width/Height) : {face.FaceRectangle.Left} {face.FaceRectangle.Top} {face.FaceRectangle.Width} {face.FaceRectangle.Height}");
 
                     // Get accessories of the faces
                     List<Accessory> accessoriesList = (List<Accessory>)face.FaceAttributes.Accessories;
@@ -111,8 +111,8 @@ namespace FacialRecognitionProject
                     Console.WriteLine($"Accessories : {accessory}");
 
                     // Get face other attributes
-                    Console.WriteLine($"Age : {face.FaceAttributes.Age}");
-                    Console.WriteLine($"Blur : {face.FaceAttributes.Blur.BlurLevel}");
+                    MessageBox.Show($"Age : {face.FaceAttributes.Age}");
+                    MessageBox.Show($"Blur : {face.FaceAttributes.Blur.BlurLevel}");
 
                     // Get emotion on the face
                     string emotionType = string.Empty;
@@ -126,12 +126,12 @@ namespace FacialRecognitionProject
                     if (emotion.Neutral > emotionValue) { emotionValue = emotion.Neutral; emotionType = "Neutral"; }
                     if (emotion.Sadness > emotionValue) { emotionValue = emotion.Sadness; emotionType = "Sadness"; }
                     if (emotion.Surprise > emotionValue) { emotionType = "Surprise"; }
-                    Console.WriteLine($"Emotion : {emotionType}");
+                    MessageBox.Show($"Emotion : {emotionType}");
 
                     // Get more face attributes
-                    Console.WriteLine($"Exposure : {face.FaceAttributes.Exposure.ExposureLevel}");
-                    Console.WriteLine($"FacialHair : {string.Format("{0}", face.FaceAttributes.FacialHair.Moustache + face.FaceAttributes.FacialHair.Beard + face.FaceAttributes.FacialHair.Sideburns > 0 ? "Yes" : "No")}");
-                    Console.WriteLine($"Glasses : {face.FaceAttributes.Glasses}");
+                    MessageBox.Show($"Exposure : {face.FaceAttributes.Exposure.ExposureLevel}");
+                    MessageBox.Show($"FacialHair : {string.Format("{0}", face.FaceAttributes.FacialHair.Moustache + face.FaceAttributes.FacialHair.Beard + face.FaceAttributes.FacialHair.Sideburns > 0 ? "Yes" : "No")}");
+                    MessageBox.Show($"Glasses : {face.FaceAttributes.Glasses}");
 
                     // Get hair color
                     Hair hair = face.FaceAttributes.Hair;
@@ -144,15 +144,15 @@ namespace FacialRecognitionProject
                         if (hairColor.Confidence <= maxConfidence) { continue; }
                         maxConfidence = hairColor.Confidence; returnColor = hairColor.Color; color = returnColor.ToString();
                     }
-                    Console.WriteLine($"Hair : {color}");
+                    MessageBox.Show($"Hair : {color}");
 
                     // Get more attributes
-                    Console.WriteLine($"HeadPose : {string.Format("Pitch: {0}, Roll: {1}, Yaw: {2}", Math.Round(face.FaceAttributes.HeadPose.Pitch, 2), Math.Round(face.FaceAttributes.HeadPose.Roll, 2), Math.Round(face.FaceAttributes.HeadPose.Yaw, 2))}");
-                    Console.WriteLine($"Makeup : {string.Format("{0}", (face.FaceAttributes.Makeup.EyeMakeup || face.FaceAttributes.Makeup.LipMakeup) ? "Yes" : "No")}");
-                    Console.WriteLine($"Noise : {face.FaceAttributes.Noise.NoiseLevel}");
-                    Console.WriteLine($"Occlusion : {string.Format("EyeOccluded: {0}", face.FaceAttributes.Occlusion.EyeOccluded ? "Yes" : "No")} " +
+                    MessageBox.Show($"HeadPose : {string.Format("Pitch: {0}, Roll: {1}, Yaw: {2}", Math.Round(face.FaceAttributes.HeadPose.Pitch, 2), Math.Round(face.FaceAttributes.HeadPose.Roll, 2), Math.Round(face.FaceAttributes.HeadPose.Yaw, 2))}");
+                    MessageBox.Show($"Makeup : {string.Format("{0}", (face.FaceAttributes.Makeup.EyeMakeup || face.FaceAttributes.Makeup.LipMakeup) ? "Yes" : "No")}");
+                    MessageBox.Show($"Noise : {face.FaceAttributes.Noise.NoiseLevel}");
+                    MessageBox.Show($"Occlusion : {string.Format("EyeOccluded: {0}", face.FaceAttributes.Occlusion.EyeOccluded ? "Yes" : "No")} " +
                         $" {string.Format("ForeheadOccluded: {0}", face.FaceAttributes.Occlusion.ForeheadOccluded ? "Yes" : "No")}   {string.Format("MouthOccluded: {0}", face.FaceAttributes.Occlusion.MouthOccluded ? "Yes" : "No")}");
-                    Console.WriteLine($"Smile : {face.FaceAttributes.Smile}");
+                    MessageBox.Show($"Smile : {face.FaceAttributes.Smile}");
 
                 }
             }
@@ -160,8 +160,7 @@ namespace FacialRecognitionProject
 
         public static async Task IdentifyInPersonGroup(IFaceClient client, string url, string recognitionModel)
         {
-            Console.WriteLine("========IDENTIFY FACES========");
-            Console.WriteLine();
+            MessageBox.Show("Identify Faces Method In Progress");
 
             // Create a dictionary for all your images, grouping similar ones under the same key.
             Dictionary<string, string[]> personDictionary =
@@ -177,7 +176,7 @@ namespace FacialRecognitionProject
             string sourceImageFileName = "identification1.jpg";
 
             // Create a person group. 
-            Console.WriteLine($"Create a person group ({personGroupId}).");
+            MessageBox.Show($"Create a person group ({personGroupId}).");
             await client.PersonGroup.CreateAsync(personGroupId, personGroupId, recognitionModel: recognitionModel);
             // The similar faces will be grouped into a single person group person.
             foreach (var groupedFace in personDictionary.Keys)
@@ -185,20 +184,19 @@ namespace FacialRecognitionProject
                 // Limit TPS
                 await Task.Delay(250);
                 Person person = await client.PersonGroupPerson.CreateAsync(personGroupId: personGroupId, name: groupedFace);
-                Console.WriteLine($"Create a person group person '{groupedFace}'.");
+                MessageBox.Show($"Create a person group person '{groupedFace}'.");
 
                 // Add face to the person group person.
                 foreach (var similarImage in personDictionary[groupedFace])
                 {
-                    Console.WriteLine($"Add face to the person group person({groupedFace}) from image `{similarImage}`");
+                    MessageBox.Show($"Add face to the person group person({groupedFace}) from image `{similarImage}`");
                     PersistedFace face = await client.PersonGroupPerson.AddFaceFromUrlAsync(personGroupId, person.PersonId,
                         $"{url}{similarImage}", similarImage);
                 }
             }
 
             // Start to train the person group.
-            Console.WriteLine();
-            Console.WriteLine($"Train person group {personGroupId}.");
+            MessageBox.Show($"Train person group {personGroupId}.");
             await client.PersonGroup.TrainAsync(personGroupId);
 
             // Wait until the training is completed.
@@ -206,10 +204,9 @@ namespace FacialRecognitionProject
             {
                 await Task.Delay(1000);
                 var trainingStatus = await client.PersonGroup.GetTrainingStatusAsync(personGroupId);
-                Console.WriteLine($"Training status: {trainingStatus.Status}.");
+                MessageBox.Show($"Training status: {trainingStatus.Status}."); //May need to comment out when testing
                 if (trainingStatus.Status == TrainingStatusType.Succeeded) { break; }
             }
-            Console.WriteLine();
 
 
             List<Guid> sourceFaceIds = new List<Guid>();
@@ -225,10 +222,9 @@ namespace FacialRecognitionProject
             foreach (var identifyResult in identifyResults)
             {
                 Person person = await client.PersonGroupPerson.GetAsync(personGroupId, identifyResult.Candidates[0].PersonId);
-                Console.WriteLine($"Person '{person.Name}' is identified for face in: {sourceImageFileName} - {identifyResult.FaceId}," +
+                MessageBox.Show($"Person '{person.Name}' is identified for face in: {sourceImageFileName} - {identifyResult.FaceId}," +
                     $" confidence: {identifyResult.Candidates[0].Confidence}.");
             }
-            Console.WriteLine();
         }
 
 
@@ -242,7 +238,7 @@ namespace FacialRecognitionProject
             {
                 sufficientQualityFaces.Add(detectedFace);
             }
-            Console.WriteLine($"{detectedFaces.Count} face(s) with {sufficientQualityFaces.Count} having sufficient quality for recognition detected from image `{Path.GetFileName(url)}`");
+            MessageBox.Show($"{detectedFaces.Count} face(s) with {sufficientQualityFaces.Count} having sufficient quality for recognition detected from image `{Path.GetFileName(url)}`");
 
             return sufficientQualityFaces.ToList();
         }
@@ -253,8 +249,7 @@ namespace FacialRecognitionProject
         */
         public static async Task FindSimilar(IFaceClient client, string url, string recognition_model)
         {
-            Console.WriteLine("========FIND SIMILAR========");
-            Console.WriteLine();
+            MessageBox.Show("Find Similar Method In Progress");
 
             List<string> targetImageFileNames = new List<string>
                         {
@@ -280,16 +275,14 @@ namespace FacialRecognitionProject
 
             // Detect faces from source image url.
             IList<DetectedFace> detectedFaces = await DetectFaceRecognize(client, $"{url}{sourceImageFileName}", recognition_model);
-            Console.WriteLine();
 
             // Find a similar face(s) in the list of IDs. Comapring only the first in list for testing purposes.
             IList<SimilarFace> similarResults = await client.Face.FindSimilarAsync(detectedFaces[0].FaceId.Value, null, null, targetFaceIds);
 
             foreach (var similarResult in similarResults)
             {
-                Console.WriteLine($"Faces from {sourceImageFileName} & ID:{similarResult.FaceId} are similar with confidence: {similarResult.Confidence}.");
+                MessageBox.Show($"Faces from {sourceImageFileName} & ID:{similarResult.FaceId} are similar with confidence: {similarResult.Confidence}.");
             }
-            Console.WriteLine();
         }
     }
 }
