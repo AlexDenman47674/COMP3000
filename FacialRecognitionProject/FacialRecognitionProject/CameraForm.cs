@@ -15,7 +15,7 @@ namespace FacialRecognitionProject
     public partial class CameraForm : Form
     {
 
-        
+        AzureFace FaceAI = new AzureFace();
 
         public CameraForm()
         {
@@ -25,7 +25,7 @@ namespace FacialRecognitionProject
 
         private void CameraForm_Load(object sender, EventArgs e)
         {
-
+            FaceAI.AzureMain();
         }
     }
 }

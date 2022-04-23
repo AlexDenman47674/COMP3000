@@ -19,7 +19,7 @@ namespace FacialRecognitionProject
         const string IMAGE_BASE_URL = "https://csdx.blob.core.windows.net/resources/Face/Images/";
         static string personGroupId = Guid.NewGuid().ToString();
 
-        static void AzureMain(string[] args)
+        public void AzureMain()
         {
             const string RECOGNITION_MODEL4 = RecognitionModel.Recognition04;
 
