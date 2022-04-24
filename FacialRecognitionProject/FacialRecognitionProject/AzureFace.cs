@@ -16,7 +16,7 @@ namespace FacialRecognitionProject
     {
         const string SUBSCRIPTION_KEY = "SUB KEY GOES HERE";
         const string ENDPOINT = "END POINT GOES HERE";
-        const string IMAGE_BASE_URL = "https://csdx.blob.core.windows.net/resources/Face/Images/";
+        const string IMAGE_BASE_URL = "https://www.dropbox.com/home/UserImages/";
         static string personGroupId = Guid.NewGuid().ToString();
 
         public void AzureMain()
@@ -65,12 +65,12 @@ namespace FacialRecognitionProject
             // Create a list of images
             List<string> imageFileNames = new List<string>
                     {
-                        "detection1.jpg",    // single female with glasses
+                        "Aaron_Eckhart_0001.jpg",    
                         // "detection2.jpg", // (optional: single man)
                         // "detection3.jpg", // (optional: single male construction worker)
                         // "detection4.jpg", // (optional: 3 people at cafe, 1 is blurred)
-                        "detection5.jpg",    // family, woman child man
-                        "detection6.jpg"     // elderly couple, male female
+                        "Nicolas_Cage_0001.jpg",    
+                        "Queen_Elizabeth_II_0001.jpg"     
                     };
 
             foreach (var imageFileName in imageFileNames)
