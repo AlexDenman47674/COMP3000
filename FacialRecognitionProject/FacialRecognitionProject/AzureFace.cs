@@ -16,7 +16,7 @@ namespace FacialRecognitionProject
     {
         const string SUBSCRIPTION_KEY = "SUB KEY GOES HERE";
         const string ENDPOINT = "END POINT GOES HERE";
-        const string IMAGE_BASE_URL = "https://www.dropbox.com/scl/fo/7xcxfetsydkv6sv28o9xg/h?dl=0&rlkey=i8lgyy6q8kh4wzzptgitgnpd9/";
+        const string IMAGE_BASE_URL = "https://drive.google.com/drive/folders/1ZpVeLCqcZVYsJ2UYWIalQTJzjWH1kZGN?usp=sharing/";
         static string personGroupId = Guid.NewGuid().ToString();
 
         public void AzureMain()
