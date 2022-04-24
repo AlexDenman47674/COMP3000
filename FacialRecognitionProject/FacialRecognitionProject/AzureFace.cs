@@ -16,7 +16,7 @@ namespace FacialRecognitionProject
     {
         const string SUBSCRIPTION_KEY = "SUB KEY GOES HERE";
         const string ENDPOINT = "END POINT GOES HERE";
-        const string IMAGE_BASE_URL = "https://drive.google.com/drive/folders/1ZpVeLCqcZVYsJ2UYWIalQTJzjWH1kZGN?usp=sharing/";
+        const string IMAGE_BASE_URL = "C:/Users/Alex/Desktop/COMP3000/UserImages/";
         static string personGroupId = Guid.NewGuid().ToString();
 
         public void AzureMain()
@@ -27,7 +27,7 @@ namespace FacialRecognitionProject
             IFaceClient client = Authenticate(ENDPOINT, SUBSCRIPTION_KEY);
 
             // Detect - get features from faces.
-            //DetectFaceExtract(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
+            DetectFaceExtract(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
             // Find Similar - find a similar face from a list of faces.
             FindSimilar(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
 
