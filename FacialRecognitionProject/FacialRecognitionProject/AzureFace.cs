@@ -27,7 +27,7 @@ namespace FacialRecognitionProject
             IFaceClient client = Authenticate(ENDPOINT, SUBSCRIPTION_KEY);
 
             // Detect - get features from faces.
-            DetectFaceExtract(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
+            //DetectFaceExtract(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
             // Find Similar - find a similar face from a list of faces.
             FindSimilar(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
 
@@ -253,17 +253,10 @@ namespace FacialRecognitionProject
 
             List<string> targetImageFileNames = new List<string>
                         {
-                            "Family1-Dad1.jpg",
-                            "Family1-Daughter1.jpg",
-                            "Family1-Mom1.jpg",
-                            "Family1-Son1.jpg",
-                            "Family2-Lady1.jpg",
-                            "Family2-Man1.jpg",
-                            "Family3-Lady1.jpg",
-                            "Family3-Man1.jpg"
+                            "Nicolas_Cage_0001.jpg"
                         };
 
-            string sourceImageFileName = "findsimilar.jpg";
+            string sourceImageFileName = "Test_Cage_0001.jpg";
             IList<Guid?> targetFaceIds = new List<Guid?>();
             foreach (var targetImageFileName in targetImageFileNames)
             {
