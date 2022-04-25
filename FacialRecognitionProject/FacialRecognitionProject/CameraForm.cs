@@ -28,9 +28,9 @@ namespace FacialRecognitionProject
             
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
-            FaceAI.AzureMain();
+            await Task.Run(() => FaceAI.AzureMain());
         }
     }
 }

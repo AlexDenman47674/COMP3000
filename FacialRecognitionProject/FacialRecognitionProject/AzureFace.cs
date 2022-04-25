@@ -15,7 +15,7 @@ namespace FacialRecognitionProject
     class AzureFace
     {
         const string SUBSCRIPTION_KEY = "SUB KEY GOES HERE";
-        const string ENDPOINT = "ENDPOINT GOES HERE";
+        const string ENDPOINT = "END POINT GOES HERE";
         const string IMAGE_BASE_URL = "https://";
         static string personGroupId = Guid.NewGuid().ToString();
 
@@ -35,8 +35,7 @@ namespace FacialRecognitionProject
             //Verify(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
 
             // Identify - recognize a face(s) in a person group (a person group is created in this example).
-            IdentifyInPersonGroup(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
-
+            //IdentifyInPersonGroup(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
             //// LargePersonGroup - create, then get data.
             //LargePersonGroup(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
             //// Group faces - automatically group similar faces.
