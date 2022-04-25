@@ -15,8 +15,8 @@ namespace FacialRecognitionProject
     class AzureFace
     {
         const string SUBSCRIPTION_KEY = "SUB KEY GOES HERE";
-        const string ENDPOINT = "END POINT GOES HERE";
-        const string IMAGE_BASE_URL = "C:/Users/Alex/Desktop/COMP3000/UserImages/";
+        const string ENDPOINT = "ENDPOINT GOES HERE";
+        const string IMAGE_BASE_URL = "https://";
         static string personGroupId = Guid.NewGuid().ToString();
 
         public void AzureMain()
@@ -65,12 +65,12 @@ namespace FacialRecognitionProject
             // Create a list of images
             List<string> imageFileNames = new List<string>
                     {
-                        "Aaron_Eckhart_0001.jpg",    
+                        "static.tvtropes.org/pmwiki/pub/images/aaron_eckhart.jpg",    
                         // "detection2.jpg", // (optional: single man)
                         // "detection3.jpg", // (optional: single male construction worker)
                         // "detection4.jpg", // (optional: 3 people at cafe, 1 is blurred)
-                        "Nicolas_Cage_0001.jpg",    
-                        "Queen_Elizabeth_II_0001.jpg"     
+                        //"cdn.britannica.com/64/135864-050-57268027/Nicolas-Cage-2009.jpg"//,
+                        //"upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Queen_Elizabeth_II_in_March_2015.jpg/1200px-Queen_Elizabeth_II_in_March_2015.jpg"
                     };
 
             foreach (var imageFileName in imageFileNames)
@@ -79,11 +79,21 @@ namespace FacialRecognitionProject
 
                 // Detect faces with all attributes from image url.
                 detectedFaces = await client.Face.DetectWithUrlAsync($"{url}{imageFileName}",
-                        returnFaceAttributes: new List<FaceAttributeType> { FaceAttributeType.Accessories, FaceAttributeType.Age,
-                FaceAttributeType.Blur, FaceAttributeType.Emotion, FaceAttributeType.Exposure, FaceAttributeType.FacialHair,
-                FaceAttributeType.Glasses, FaceAttributeType.Hair, FaceAttributeType.HeadPose,
-                FaceAttributeType.Makeup, FaceAttributeType.Noise, FaceAttributeType.Occlusion, FaceAttributeType.Smile,
-                FaceAttributeType.Smile, FaceAttributeType.Gender },
+                        returnFaceAttributes: new List<FaceAttributeType> { 
+                            //FaceAttributeType.Accessories, 
+                            //FaceAttributeType.Age,
+                            //FaceAttributeType.Blur, 
+                            //FaceAttributeType.Emotion, 
+                            //FaceAttributeType.Exposure, 
+                            FaceAttributeType.FacialHair,
+                            //FaceAttributeType.Glasses, 
+                            FaceAttributeType.Hair, 
+                            //FaceAttributeType.HeadPose,
+                            //FaceAttributeType.Makeup, 
+                            //FaceAttributeType.Noise, 
+                            //FaceAttributeType.Occlusion, 
+                            //FaceAttributeType.Smile, 
+                            FaceAttributeType.Gender },
                         // We specify detection model 1 because we are retrieving attributes.
                         detectionModel: DetectionModel.Detection01,
                         recognitionModel: recognitionModel);
@@ -232,6 +242,7 @@ namespace FacialRecognitionProject
         {
             // Detect faces from image URL. Since only recognizing, use the recognition model 1.
             // We use detection model 3 because we are not retrieving attributes.
+            MessageBox.Show("Beginning Detect Face Recognize");
             IList<DetectedFace> detectedFaces = await faceClient.Face.DetectWithUrlAsync(url, recognitionModel: recognition_model, detectionModel: DetectionModel.Detection03);
             List<DetectedFace> sufficientQualityFaces = new List<DetectedFace>();
             foreach (DetectedFace detectedFace in detectedFaces)
@@ -253,10 +264,10 @@ namespace FacialRecognitionProject
 
             List<string> targetImageFileNames = new List<string>
                         {
-                            "Nicolas_Cage_0001.jpg"
+                            "cdn.britannica.com/64/135864-050-57268027/Nicolas-Cage-2009.jpg"
                         };
 
-            string sourceImageFileName = "Test_Cage_0001.jpg";
+            string sourceImageFileName = "imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2022%2F01%2F05%2FGettyImages-2902058.jpg";
             IList<Guid?> targetFaceIds = new List<Guid?>();
             foreach (var targetImageFileName in targetImageFileNames)
             {
