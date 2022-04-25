@@ -19,8 +19,39 @@ namespace FacialRecognitionProject
         const string IMAGE_BASE_URL = "https://";
         static string personGroupId = Guid.NewGuid().ToString();
 
+        List<DataPerson> DBPeople;
+        List<DataImages> DBImages;
+
+        public class DataPerson
+        {
+            public int PersonID { get; set; }
+            public string Name { get; set; }
+            public string Description { get; set; }
+            public int UserID { get; set; }
+        }
+
+        public class DataImages
+        {
+            public int ImageID { get; set; }
+            public string ImageName { get; set; }
+            public string ImageFile { get; set; }
+            public int PersonID { get; set; }
+        }
+
         public void AzureMain()
         {
+            using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json"))
+            {
+                string json = r.ReadToEnd();
+                DBPeople = JsonConvert.DeserializeObject<List<DataPerson>>(json);
+            }
+
+            using (StreamReader r2 = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseImages.json"))
+            {
+                string json = r2.ReadToEnd();
+                DBImages = JsonConvert.DeserializeObject<List<DataImages>>(json);
+            }
+
             const string RECOGNITION_MODEL4 = RecognitionModel.Recognition04;
 
             // Authenticate.
