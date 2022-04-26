@@ -19,20 +19,6 @@ namespace FacialRecognitionProject
         AzureFace FaceAI = new AzureFace();
         List<Person> DBPeople;
         List<Images> DBImages;
-        int CurrentImage = 0;
-
-        public int MyImage
-        {
-            get
-            {
-                return CurrentImage;
-            }
-            set
-            {
-                if (CurrentImage != value)
-                    CurrentImage = value;
-            }
-        }
 
         public class Person
         {
@@ -79,7 +65,6 @@ namespace FacialRecognitionProject
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            labelImagesScanned.Text = Convert.ToString(CurrentImage);
         }
     }
 }
