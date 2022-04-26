@@ -60,7 +60,7 @@ namespace FacialRecognitionProject
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            await Task.Run(() => FaceAI.AzureMain());
+            await Task.Run(() => FaceAI.AzureMain(textBoxInputTarget.Text));
         }
 
         private void timer1_Tick(object sender, EventArgs e)
