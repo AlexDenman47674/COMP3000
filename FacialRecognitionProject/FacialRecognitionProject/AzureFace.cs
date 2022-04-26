@@ -37,7 +37,7 @@ namespace FacialRecognitionProject
             public int PersonID { get; set; }
         }
 
-        public void AzureMain()
+        public void AzureMain(string InputURL)
         {
 
 
@@ -268,7 +268,7 @@ namespace FacialRecognitionProject
             {
                 sufficientQualityFaces.Add(detectedFace);
             }
-            MessageBox.Show($"{detectedFaces.Count} face(s) with {sufficientQualityFaces.Count} having sufficient quality for recognition detected from image `{Path.GetFileName(url)}`");
+            //MessageBox.Show($"{detectedFaces.Count} face(s) with {sufficientQualityFaces.Count} having sufficient quality for recognition detected from image `{Path.GetFileName(url)}`");
 
 
             return sufficientQualityFaces.ToList();
@@ -278,7 +278,7 @@ namespace FacialRecognitionProject
         * FIND SIMILAR
         * This example will take an image and find a similar one to it in another image.
         */
-        public static async Task FindSimilar(IFaceClient client, string url, string recognition_model)
+        public static async Task FindSimilar(IFaceClient client, string url, string recognition_model, string TargetInput)
         {
             MessageBox.Show("Find Similar Method In Progress");
 
