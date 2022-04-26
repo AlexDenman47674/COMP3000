@@ -109,6 +109,7 @@
             // pictureBoxImage
             // 
             this.pictureBoxImage.BackColor = System.Drawing.Color.Silver;
+            this.pictureBoxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBoxImage.Location = new System.Drawing.Point(544, 22);
             this.pictureBoxImage.Name = "pictureBoxImage";
             this.pictureBoxImage.Size = new System.Drawing.Size(340, 426);
