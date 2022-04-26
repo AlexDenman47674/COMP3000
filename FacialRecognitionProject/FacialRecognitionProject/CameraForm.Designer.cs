@@ -156,6 +156,7 @@
             // 
             this.textBoxName.Location = new System.Drawing.Point(6, 65);
             this.textBoxName.Name = "textBoxName";
+            this.textBoxName.ReadOnly = true;
             this.textBoxName.Size = new System.Drawing.Size(524, 37);
             this.textBoxName.TabIndex = 5;
             // 
@@ -164,6 +165,7 @@
             this.textBoxDescription.Location = new System.Drawing.Point(6, 138);
             this.textBoxDescription.Multiline = true;
             this.textBoxDescription.Name = "textBoxDescription";
+            this.textBoxDescription.ReadOnly = true;
             this.textBoxDescription.Size = new System.Drawing.Size(524, 162);
             this.textBoxDescription.TabIndex = 6;
             // 
@@ -171,6 +173,7 @@
             // 
             this.textBoxImageName.Location = new System.Drawing.Point(6, 331);
             this.textBoxImageName.Name = "textBoxImageName";
+            this.textBoxImageName.ReadOnly = true;
             this.textBoxImageName.Size = new System.Drawing.Size(524, 37);
             this.textBoxImageName.TabIndex = 7;
             // 
@@ -178,6 +181,7 @@
             // 
             this.textBoxPersonID.Location = new System.Drawing.Point(6, 403);
             this.textBoxPersonID.Name = "textBoxPersonID";
+            this.textBoxPersonID.ReadOnly = true;
             this.textBoxPersonID.Size = new System.Drawing.Size(524, 37);
             this.textBoxPersonID.TabIndex = 8;
             // 
