@@ -268,7 +268,7 @@ namespace FacialRecognitionProject
             {
                 sufficientQualityFaces.Add(detectedFace);
             }
-            MessageBox.Show($"{detectedFaces.Count} face(s) with {sufficientQualityFaces.Count} having sufficient quality for recognition detected from image `{Path.GetFileName(url)}`");
+            //MessageBox.Show($"{detectedFaces.Count} face(s) with {sufficientQualityFaces.Count} having sufficient quality for recognition detected from image `{Path.GetFileName(url)}`");
 
 
             return sufficientQualityFaces.ToList();
@@ -316,6 +316,7 @@ namespace FacialRecognitionProject
 
             // Detect faces from source image url.
             IList<DetectedFace> detectedFaces = await DetectFaceRecognize(client, $"{url}{sourceImageFileName}", recognition_model);
+            MessageBox.Show("Face Detection Complete");
 
             // Find a similar face(s) in the list of IDs. Comapring only the first in list for testing purposes.
             IList<SimilarFace> similarResults = await client.Face.FindSimilarAsync(detectedFaces[0].FaceId.Value, null, null, targetFaceIds);
