@@ -19,6 +19,20 @@ namespace FacialRecognitionProject
         AzureFace FaceAI = new AzureFace();
         List<Person> DBPeople;
         List<Images> DBImages;
+        int CurrentImage = 0;
+
+        public int MyImage
+        {
+            get
+            {
+                return CurrentImage;
+            }
+            set
+            {
+                if (CurrentImage != value)
+                    CurrentImage = value;
+            }
+        }
 
         public class Person
         {
@@ -44,6 +58,7 @@ namespace FacialRecognitionProject
 
         private void CameraForm_Load(object sender, EventArgs e)
         {
+            timer1.Start();
             using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json"))
             {
                 string json = r.ReadToEnd();
@@ -60,6 +75,11 @@ namespace FacialRecognitionProject
         private async void button1_Click(object sender, EventArgs e)
         {
             await Task.Run(() => FaceAI.AzureMain());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            labelImagesScanned.Text = Convert.ToString(CurrentImage);
         }
     }
 }

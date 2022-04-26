@@ -14,13 +14,12 @@ namespace FacialRecognitionProject
 {
     class AzureFace
     {
-        const string SUBSCRIPTION_KEY = "SUB KEY GOES HERE";
-        const string ENDPOINT = "END POINT GOES HERE";
+        const string SUBSCRIPTION_KEY = "c2537bcedf144d6ebb14897ddb7f0c85";
+        const string ENDPOINT = "https://alexdenmanface.cognitiveservices.azure.com/";
         const string IMAGE_BASE_URL = "https://";
         static string personGroupId = Guid.NewGuid().ToString();
 
-        List<DataPerson> DBPeople;
-        List<DataImages> DBImages;
+
 
         public class DataPerson
         {
@@ -40,17 +39,7 @@ namespace FacialRecognitionProject
 
         public void AzureMain()
         {
-            using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json"))
-            {
-                string json = r.ReadToEnd();
-                DBPeople = JsonConvert.DeserializeObject<List<DataPerson>>(json);
-            }
 
-            using (StreamReader r2 = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseImages.json"))
-            {
-                string json = r2.ReadToEnd();
-                DBImages = JsonConvert.DeserializeObject<List<DataImages>>(json);
-            }
 
             const string RECOGNITION_MODEL4 = RecognitionModel.Recognition04;
 
@@ -58,7 +47,7 @@ namespace FacialRecognitionProject
             IFaceClient client = Authenticate(ENDPOINT, SUBSCRIPTION_KEY);
 
             // Detect - get features from faces.
-            DetectFaceExtract(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
+            //DetectFaceExtract(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
             // Find Similar - find a similar face from a list of faces.
             FindSimilar(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
 
@@ -272,7 +261,7 @@ namespace FacialRecognitionProject
         {
             // Detect faces from image URL. Since only recognizing, use the recognition model 1.
             // We use detection model 3 because we are not retrieving attributes.
-            MessageBox.Show("Beginning Detect Face Recognize");
+            //MessageBox.Show("Beginning Detect Face Recognize");
             IList<DetectedFace> detectedFaces = await faceClient.Face.DetectWithUrlAsync(url, recognitionModel: recognition_model, detectionModel: DetectionModel.Detection03);
             List<DetectedFace> sufficientQualityFaces = new List<DetectedFace>();
             foreach (DetectedFace detectedFace in detectedFaces)
@@ -280,6 +269,7 @@ namespace FacialRecognitionProject
                 sufficientQualityFaces.Add(detectedFace);
             }
             MessageBox.Show($"{detectedFaces.Count} face(s) with {sufficientQualityFaces.Count} having sufficient quality for recognition detected from image `{Path.GetFileName(url)}`");
+
 
             return sufficientQualityFaces.ToList();
         }
@@ -292,10 +282,27 @@ namespace FacialRecognitionProject
         {
             MessageBox.Show("Find Similar Method In Progress");
 
-            List<string> targetImageFileNames = new List<string>
-                        {
-                            "cdn.britannica.com/64/135864-050-57268027/Nicolas-Cage-2009.jpg"
-                        };
+            List<DataPerson> DBPeople;
+            List<DataImages> DBImages;
+
+            List<string> targetImageFileNames = new List<string>{};
+
+            using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabasePeopleReduced.json"))
+            {
+                string json = r.ReadToEnd();
+                DBPeople = JsonConvert.DeserializeObject<List<DataPerson>>(json);
+            }
+
+            using (StreamReader r2 = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseImagesReduced.json"))
+            {
+                string json = r2.ReadToEnd();
+                DBImages = JsonConvert.DeserializeObject<List<DataImages>>(json);
+            }
+
+            foreach (DataImages item in DBImages)
+            {
+                targetImageFileNames.Add(item.ImageFile);
+            }
 
             string sourceImageFileName = "imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F6%2F2022%2F01%2F05%2FGettyImages-2902058.jpg";
             IList<Guid?> targetFaceIds = new List<Guid?>();

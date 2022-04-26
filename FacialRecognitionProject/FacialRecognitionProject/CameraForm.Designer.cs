@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,6 +43,9 @@
             this.textBoxDescription = new System.Windows.Forms.TextBox();
             this.textBoxImageName = new System.Windows.Forms.TextBox();
             this.textBoxPersonID = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.labelImagesScanned = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
@@ -89,6 +93,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.labelImagesScanned);
+            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.textBoxPersonID);
             this.groupBox2.Controls.Add(this.textBoxImageName);
             this.groupBox2.Controls.Add(this.textBoxDescription);
@@ -112,7 +118,7 @@
             this.pictureBoxImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBoxImage.Location = new System.Drawing.Point(544, 22);
             this.pictureBoxImage.Name = "pictureBoxImage";
-            this.pictureBoxImage.Size = new System.Drawing.Size(340, 426);
+            this.pictureBoxImage.Size = new System.Drawing.Size(340, 378);
             this.pictureBoxImage.TabIndex = 0;
             this.pictureBoxImage.TabStop = false;
             // 
@@ -185,6 +191,28 @@
             this.textBoxPersonID.Size = new System.Drawing.Size(524, 37);
             this.textBoxPersonID.TabIndex = 8;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(539, 411);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(129, 29);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Images Scanned:";
+            // 
+            // labelImagesScanned
+            // 
+            this.labelImagesScanned.AutoSize = true;
+            this.labelImagesScanned.Location = new System.Drawing.Point(665, 411);
+            this.labelImagesScanned.Name = "labelImagesScanned";
+            this.labelImagesScanned.Size = new System.Drawing.Size(22, 29);
+            this.labelImagesScanned.TabIndex = 10;
+            this.labelImagesScanned.Text = "0";
+            // 
             // CameraForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -223,5 +251,8 @@
         private System.Windows.Forms.TextBox textBoxDescription;
         private System.Windows.Forms.TextBox textBoxImageName;
         private System.Windows.Forms.TextBox textBoxPersonID;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label labelImagesScanned;
     }
 }
