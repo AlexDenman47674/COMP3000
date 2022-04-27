@@ -344,6 +344,10 @@ namespace FacialRecognitionProject
                 if (targetFaceIds[i].Value == similarResults[0].FaceId)
                 {
                     CurrentPersonURL = "https://" + DBImages[i].ImageFile;
+                    CurrentPersonName = DBPeople[i].Name;
+                    CurrentPersonDescription = DBPeople[i].Description;
+                    CurrentPersonImageName = DBImages[i].ImageName;
+                    CurrentPersonID = Convert.ToString(DBImages[i].PersonID);
                 }
             }
         }
