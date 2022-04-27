@@ -19,11 +19,11 @@ namespace FacialRecognitionProject
         const string IMAGE_BASE_URL = "https://";
         static string personGroupId = Guid.NewGuid().ToString();
 
-        public string CurrentPersonURL = "";
-        public string CurrentPersonName = "";
-        public string CurrentPersonDescription = "";
-        public string CurrentPersonImageName = "";
-        public string CurrentPersonID = "";
+        public string CurrentPersonURL { get; set; }
+        public string CurrentPersonName { get; set; }
+        public string CurrentPersonDescription { get; set; }
+        public string CurrentPersonImageName { get; set; }
+        public string CurrentPersonID { get; set; }
 
         public class DataPerson
         {
@@ -55,6 +55,7 @@ namespace FacialRecognitionProject
             // Find Similar - find a similar face from a list of faces.
             FindSimilar(client, IMAGE_BASE_URL, RECOGNITION_MODEL4, InputURL).Wait();
 
+            ReturnMethod();
             // Verify - compare two images if the same person or not.
             //Verify(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
 
@@ -282,12 +283,16 @@ namespace FacialRecognitionProject
         * FIND SIMILAR
         * This example will take an image and find a similar one to it in another image.
         */
+
+        static IList<Guid?> targetFaceIds = new List<Guid?>();
+        static IList<SimilarFace> similarResults;
+        static List<DataPerson> DBPeople;
+        static List<DataImages> DBImages;
         public static async Task FindSimilar(IFaceClient client, string url, string recognition_model, string TargetInput)
         {
             MessageBox.Show("Find Similar Method In Progress");
 
-            List<DataPerson> DBPeople;
-            List<DataImages> DBImages;
+
 
             List<string> targetImageFileNames = new List<string>{};
 
@@ -309,7 +314,7 @@ namespace FacialRecognitionProject
             }
 
             string sourceImageFileName = TargetInput;
-            IList<Guid?> targetFaceIds = new List<Guid?>();
+
             foreach (var targetImageFileName in targetImageFileNames)
             {
                 // Detect faces from target image url.
@@ -319,15 +324,27 @@ namespace FacialRecognitionProject
             }
 
             // Detect faces from source image url.
+            MessageBox.Show("Database Faces Identified");
             IList<DetectedFace> detectedFaces = await DetectFaceRecognize(client, $"{url}{sourceImageFileName}", recognition_model);
             MessageBox.Show("Face Detection Complete");
 
             // Find a similar face(s) in the list of IDs. Comapring only the first in list for testing purposes.
-            IList<SimilarFace> similarResults = await client.Face.FindSimilarAsync(detectedFaces[0].FaceId.Value, null, null, targetFaceIds);
+            similarResults = await client.Face.FindSimilarAsync(detectedFaces[0].FaceId.Value, null, null, targetFaceIds);
 
             foreach (var similarResult in similarResults)
             {
                 MessageBox.Show($"Faces from {sourceImageFileName} & ID:{similarResult.FaceId} are similar with confidence: {similarResult.Confidence}.");
+            }
+        }
+        
+        public void ReturnMethod()
+        {
+            for (int i = 0; i <= targetFaceIds.Count - 1; i++)
+            {
+                if (targetFaceIds[i].Value == similarResults[0].FaceId)
+                {
+                    CurrentPersonURL = "https://" + DBImages[i].ImageFile;
+                }
             }
         }
     }

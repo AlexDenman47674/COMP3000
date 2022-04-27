@@ -61,6 +61,7 @@ namespace FacialRecognitionProject
         private async void button1_Click(object sender, EventArgs e)
         {
             await Task.Run(() => FaceAI.AzureMain(textBoxInputTarget.Text));
+            pictureBoxImage.ImageLocation = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Nicolas_Cage_Deauville_2013.jpg/388px-Nicolas_Cage_Deauville_2013.jpg";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
