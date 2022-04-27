@@ -19,7 +19,11 @@ namespace FacialRecognitionProject
         const string IMAGE_BASE_URL = "https://";
         static string personGroupId = Guid.NewGuid().ToString();
 
-
+        public string CurrentPersonURL = "";
+        public string CurrentPersonName = "";
+        public string CurrentPersonDescription = "";
+        public string CurrentPersonImageName = "";
+        public string CurrentPersonID = "";
 
         public class DataPerson
         {
