@@ -85,6 +85,7 @@ namespace FacialRecognitionProject
 
         private void buttonSwitchTable_Click(object sender, EventArgs e)
         {
+            //If DBImages is the current source, switch to DBPeople
             if (databaseViewer.DataSource == DBImages)
             {
                 databaseViewer.DataSource = DBPeople;
@@ -99,6 +100,7 @@ namespace FacialRecognitionProject
             }
             else
             {
+                //Else switch to DBImages
                 databaseViewer.DataSource = DBImages;
 
                 textBoxPeopleName.Enabled = false;
@@ -113,10 +115,12 @@ namespace FacialRecognitionProject
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            //if the datasource = DBImages update the Images dataset
             if (databaseViewer.DataSource == DBImages)
             {
                 DBImages.Add(new Images() {ImageID = DBImages.Count+1 , ImageName = textBoxImageName.Text, ImageFile = textBoxImageFile.Text, PersonID = Convert.ToInt32(textBoxPersonID.Text)});
             }
+            //else update the People dataset
             else
             {
                 DBPeople.Add(new Person() {PersonID = DBPeople.Count+1 , Name = textBoxPeopleName.Text, Description = textBoxDescription.Text, UserID = Convert.ToInt32(textBoxUserID.Text)});
@@ -124,6 +128,7 @@ namespace FacialRecognitionProject
 
             string json = JsonConvert.SerializeObject(DBPeople.ToArray());
 
+            //Write to the DatabasePeople & DatabaseImages JSON files
             System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json", json);
 
             json = JsonConvert.SerializeObject(DBImages.ToArray());
@@ -136,20 +141,19 @@ namespace FacialRecognitionProject
             string RemovedItem;
             Images RemovedObject = new Images();
             Person RemovedPerson = new Person();
-            int temp = 0;
 
             if (databaseViewer.DataSource == DBImages)
             {
                 RemovedItem = textBoxImageName.Text;
+                //Each item in DBImages are compared to RemovedObject
                 foreach (Images i in DBImages)
                 {
-                    temp += 1;
                     if (i.ImageName == RemovedItem)
                     {
                         RemovedObject = i;
                     }
                 }
-
+                //Selected item is removed
                 DBImages.Remove(RemovedObject);
             }
             else
@@ -157,18 +161,19 @@ namespace FacialRecognitionProject
                 RemovedItem = textBoxPeopleName.Text;
                 foreach (Person i in DBPeople)
                 {
-                    temp += 1;
+                    //Items in DBPeople also compared
                     if (i.Name == RemovedItem)
                     {
                         RemovedPerson = i;
                     }
                 }
-
+                //And removed
                 DBPeople.Remove(RemovedPerson);
             }
 
             string json = JsonConvert.SerializeObject(DBPeople.ToArray());
 
+            //Changes commited to the relevent JSON files
             System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json", json);
 
             json = JsonConvert.SerializeObject(DBImages.ToArray());

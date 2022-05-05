@@ -43,6 +43,7 @@ namespace FacialRecognitionProject
             }
         }
 
+        //Create DBUsers list
         List<User> DBUsers;
 
         public class User
@@ -61,6 +62,7 @@ namespace FacialRecognitionProject
 
         private void timerDateTime_Tick(object sender, EventArgs e)
         {
+            //Fetch the current date/time
             labelCurrentTime.Text = DateTime.Now.ToString("h:mm:ss tt");
             labelCurrentDate.Text = DateTime.Today.ToString("dd/MM/yyyy");
         }
@@ -102,14 +104,16 @@ namespace FacialRecognitionProject
 
         private void HomeForm_Load(object sender, EventArgs e)
         {
+            //Read JSON data into DBUsers
             using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json"))
             {
                 string json = r.ReadToEnd();
                 DBUsers = JsonConvert.DeserializeObject<List<User>>(json);
             }
-
+            //Set Current User
             labelCurrentUser.Text = DBUsers[MyUser].Username;
 
+            //Read in FavURL
             FavURL = System.IO.File.ReadAllText(@"C:/Users/Alex/Desktop/COMP3000/BookmarkedWebsite.txt");
             webBrowser1.Navigate(new Uri(MyURL));
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Import system settings into Form
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -19,8 +20,11 @@ namespace FacialRecognitionProject
             InitializeComponent();
         }
 
+        //DBUsers variable designed to store user info from JSON file
         List<User> DBUsers;
 
+
+        //User class designed to match Users JSON file
         public class User
         {
             public int UserID { get; set; }
@@ -31,7 +35,7 @@ namespace FacialRecognitionProject
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //StreamReader takes data from DatabaseUsers.json
             using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabaseUsers.json"))
             {
                 string json = r.ReadToEnd();
@@ -41,6 +45,7 @@ namespace FacialRecognitionProject
 
         private void timerPasswordCheck_Tick(object sender, EventArgs e)
         {
+            //Every tick if checkbox is checked hidden characters are replaced with plaintext
             if (checkBoxShowPassword.Checked==true)
             {
                 textBoxInputPassword.UseSystemPasswordChar = false;
@@ -53,7 +58,7 @@ namespace FacialRecognitionProject
 
         private void buttonLogIn_Click(object sender, EventArgs e)
         {
-
+            //Compare input to username and passwords stored in JSON file
             for (int i = 0; i <= DBUsers.Count-1; i++)
             {
                 if (textBoxInputName.Text == DBUsers[i].Username && textBoxInputPassword.Text == DBUsers[i].Password)
@@ -61,7 +66,7 @@ namespace FacialRecognitionProject
                     HomeForm MainForm = new HomeForm();
 
                     MainForm.MyUser = i;
-
+                    //if successful takes user to Main Form
                     MainForm.Show();
 
                     this.Hide();
@@ -72,6 +77,7 @@ namespace FacialRecognitionProject
 
         private void buttonSignUp_Click(object sender, EventArgs e)
         {
+            //Takes user to Sign Up Form
             SignUpForm SignForm = new SignUpForm();
 
             SignForm.Show();

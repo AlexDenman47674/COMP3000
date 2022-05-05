@@ -15,11 +15,13 @@ namespace FacialRecognitionProject
 {
     public partial class CameraForm : Form
     {
-
+        //Create the FaceAI variable referencing the AzureFace class
         AzureFace FaceAI = new AzureFace();
+        //Create the DBPeople & DBImages lists
         List<Person> DBPeople;
         List<Images> DBImages;
 
+        //Create the Person & Images classes
         public class Person
         {
             public int PersonID { get; set; }
@@ -60,7 +62,9 @@ namespace FacialRecognitionProject
 
         private async void button1_Click(object sender, EventArgs e)
         {
+            //By using threading the AzureFace class can be run without stopping the Camera form
             await Task.Run(() => FaceAI.AzureMain(textBoxInputTarget.Text));
+            //Display outputted information to the user
             pictureBoxImage.ImageLocation = $"{FaceAI.CurrentPersonURL}";
             textBoxName.Text = FaceAI.CurrentPersonName;
             textBoxDescription.Text = FaceAI.CurrentPersonDescription;

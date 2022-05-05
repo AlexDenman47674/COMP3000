@@ -117,4 +117,8 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>SOFIA or the Systematic Operator for Facial Identification Assistance was developed for the COMP3000 Final Year Project dissertation. It uses an Azure Face API to detect and identify images of people given to it by you, the user.
+</value>
+  </data>
 </root>

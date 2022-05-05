@@ -51,7 +51,7 @@ namespace FacialRecognitionProject
             IFaceClient client = Authenticate(ENDPOINT, SUBSCRIPTION_KEY);
 
             // Detect - get features from faces.
-            //DetectFaceExtract(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
+            DetectFaceExtract(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
             // Find Similar - find a similar face from a list of faces.
             FindSimilar(client, IMAGE_BASE_URL, RECOGNITION_MODEL4, InputURL).Wait();
 
@@ -89,7 +89,7 @@ namespace FacialRecognitionProject
             // Create a list of images
             List<string> imageFileNames = new List<string>
                     {
-                        "static.tvtropes.org/pmwiki/pub/images/aaron_eckhart.jpg",    
+                        "cdn.discordapp.com/attachments/751826556946743349/971129789438107658/20220420_213719.jpg",    
                         // "detection2.jpg", // (optional: single man)
                         // "detection3.jpg", // (optional: single male construction worker)
                         // "detection4.jpg", // (optional: 3 people at cafe, 1 is blurred)

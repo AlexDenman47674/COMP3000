@@ -68,6 +68,7 @@ namespace FacialRecognitionProject
         {
             InputURL = textBoxInputWebsite.Text;
 
+            //Store new URL in BookmarkedWebsite.txt
             using (StreamWriter writer = new StreamWriter("C:/Users/Alex/Desktop/COMP3000/BookmarkedWebsite.txt"))
             {
                 writer.WriteLine(InputURL);
@@ -78,6 +79,8 @@ namespace FacialRecognitionProject
 
         private void buttonClearData_Click(object sender, EventArgs e)
         {
+            //ALWAYS USE CAUTION BEFORE CLEARING THE DATASETS
+            //Read in JSON files to be deleted
             using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json"))
             {
                 string json = r.ReadToEnd();
@@ -92,15 +95,19 @@ namespace FacialRecognitionProject
 
             string json2 = JsonConvert.SerializeObject(DBPeople.ToArray());
 
+            //Create backup JSON files
             System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabasePeopleBackup.json", json2);
 
             json2 = JsonConvert.SerializeObject(DBImages.ToArray());
 
             System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabaseImagesBackup.json", json2);
 
+            //Wipe DBPeople & DBImages
             DBPeople.Clear();
             DBImages.Clear();
 
+
+           //Save changes to the original JSON files
             json2 = JsonConvert.SerializeObject(DBPeople.ToArray());
 
             System.IO.File.WriteAllText(@"C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json", json2);
