@@ -1,4 +1,5 @@
-﻿using System;
+﻿//Import dependancies
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,21 +52,11 @@ namespace FacialRecognitionProject
             IFaceClient client = Authenticate(ENDPOINT, SUBSCRIPTION_KEY);
 
             // Detect - get features from faces.
-            DetectFaceExtract(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
+            //DetectFaceExtract(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
             // Find Similar - find a similar face from a list of faces.
             FindSimilar(client, IMAGE_BASE_URL, RECOGNITION_MODEL4, InputURL).Wait();
 
             ReturnMethod();
-            // Verify - compare two images if the same person or not.
-            //Verify(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
-
-            // Identify - recognize a face(s) in a person group (a person group is created in this example).
-            //IdentifyInPersonGroup(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
-            //// LargePersonGroup - create, then get data.
-            //LargePersonGroup(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
-            //// Group faces - automatically group similar faces.
-            //Group(client, IMAGE_BASE_URL, RECOGNITION_MODEL4).Wait();
-            //// FaceList - create a face list, then get data
         }
 
         /*
@@ -89,12 +80,7 @@ namespace FacialRecognitionProject
             // Create a list of images
             List<string> imageFileNames = new List<string>
                     {
-                        "cdn.discordapp.com/attachments/751826556946743349/971129789438107658/20220420_213719.jpg",    
-                        // "detection2.jpg", // (optional: single man)
-                        // "detection3.jpg", // (optional: single male construction worker)
-                        // "detection4.jpg", // (optional: 3 people at cafe, 1 is blurred)
-                        //"cdn.britannica.com/64/135864-050-57268027/Nicolas-Cage-2009.jpg"//,
-                        //"upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Queen_Elizabeth_II_in_March_2015.jpg/1200px-Queen_Elizabeth_II_in_March_2015.jpg"
+                        "cdn.discordapp.com/attachments/751826556946743349/971129789438107658/20220420_213719.jpg"    
                     };
 
             foreach (var imageFileName in imageFileNames)
@@ -191,76 +177,6 @@ namespace FacialRecognitionProject
                 }
             }
         }
-
-        public static async Task IdentifyInPersonGroup(IFaceClient client, string url, string recognitionModel)
-        {
-            MessageBox.Show("Identify Faces Method In Progress");
-
-            // Create a dictionary for all your images, grouping similar ones under the same key.
-            Dictionary<string, string[]> personDictionary =
-                new Dictionary<string, string[]>
-                    { { "Family1-Dad", new[] { "Family1-Dad1.jpg", "Family1-Dad2.jpg" } },
-              { "Family1-Mom", new[] { "Family1-Mom1.jpg", "Family1-Mom2.jpg" } },
-              { "Family1-Son", new[] { "Family1-Son1.jpg", "Family1-Son2.jpg" } },
-              { "Family1-Daughter", new[] { "Family1-Daughter1.jpg", "Family1-Daughter2.jpg" } },
-              { "Family2-Lady", new[] { "Family2-Lady1.jpg", "Family2-Lady2.jpg" } },
-              { "Family2-Man", new[] { "Family2-Man1.jpg", "Family2-Man2.jpg" } }
-                    };
-            // A group photo that includes some of the persons you seek to identify from your dictionary.
-            string sourceImageFileName = "identification1.jpg";
-
-            // Create a person group. 
-            MessageBox.Show($"Create a person group ({personGroupId}).");
-            await client.PersonGroup.CreateAsync(personGroupId, personGroupId, recognitionModel: recognitionModel);
-            // The similar faces will be grouped into a single person group person.
-            foreach (var groupedFace in personDictionary.Keys)
-            {
-                // Limit TPS
-                await Task.Delay(250);
-                Person person = await client.PersonGroupPerson.CreateAsync(personGroupId: personGroupId, name: groupedFace);
-                MessageBox.Show($"Create a person group person '{groupedFace}'.");
-
-                // Add face to the person group person.
-                foreach (var similarImage in personDictionary[groupedFace])
-                {
-                    MessageBox.Show($"Add face to the person group person({groupedFace}) from image `{similarImage}`");
-                    PersistedFace face = await client.PersonGroupPerson.AddFaceFromUrlAsync(personGroupId, person.PersonId,
-                        $"{url}{similarImage}", similarImage);
-                }
-            }
-
-            // Start to train the person group.
-            MessageBox.Show($"Train person group {personGroupId}.");
-            await client.PersonGroup.TrainAsync(personGroupId);
-
-            // Wait until the training is completed.
-            while (true)
-            {
-                await Task.Delay(1000);
-                var trainingStatus = await client.PersonGroup.GetTrainingStatusAsync(personGroupId);
-                MessageBox.Show($"Training status: {trainingStatus.Status}."); //May need to comment out when testing
-                if (trainingStatus.Status == TrainingStatusType.Succeeded) { break; }
-            }
-
-
-            List<Guid> sourceFaceIds = new List<Guid>();
-            // Detect faces from source image url.
-            List<DetectedFace> detectedFaces = await DetectFaceRecognize(client, $"{url}{sourceImageFileName}", recognitionModel);
-
-            // Add detected faceId to sourceFaceIds.
-            foreach (var detectedFace in detectedFaces) { sourceFaceIds.Add(detectedFace.FaceId.Value); }
-
-            // Identify the faces in a person group. 
-            var identifyResults = await client.Face.IdentifyAsync(sourceFaceIds, personGroupId);
-
-            foreach (var identifyResult in identifyResults)
-            {
-                Person person = await client.PersonGroupPerson.GetAsync(personGroupId, identifyResult.Candidates[0].PersonId);
-                MessageBox.Show($"Person '{person.Name}' is identified for face in: {sourceImageFileName} - {identifyResult.FaceId}," +
-                    $" confidence: {identifyResult.Candidates[0].Confidence}.");
-            }
-        }
-
 
         private static async Task<List<DetectedFace>> DetectFaceRecognize(IFaceClient faceClient, string url, string recognition_model)
         {
