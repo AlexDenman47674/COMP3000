@@ -67,6 +67,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Myanmar Text", 20.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label1.Location = new System.Drawing.Point(335, 8);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(334, 48);
@@ -78,6 +79,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label2.Location = new System.Drawing.Point(753, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 37);
@@ -89,6 +91,7 @@
             this.labelCurrentUser.AutoSize = true;
             this.labelCurrentUser.BackColor = System.Drawing.Color.Transparent;
             this.labelCurrentUser.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCurrentUser.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.labelCurrentUser.Location = new System.Drawing.Point(888, 9);
             this.labelCurrentUser.Name = "labelCurrentUser";
             this.labelCurrentUser.Size = new System.Drawing.Size(66, 37);
@@ -103,7 +106,7 @@
             this.buttonCamera.Name = "buttonCamera";
             this.buttonCamera.Size = new System.Drawing.Size(297, 33);
             this.buttonCamera.TabIndex = 5;
-            this.buttonCamera.Text = "Access Camera";
+            this.buttonCamera.Text = "Facial Recognition";
             this.buttonCamera.UseVisualStyleBackColor = false;
             this.buttonCamera.Click += new System.EventHandler(this.buttonCamera_Click);
             // 
@@ -153,7 +156,7 @@
             this.buttonDatabase.Name = "buttonDatabase";
             this.buttonDatabase.Size = new System.Drawing.Size(297, 33);
             this.buttonDatabase.TabIndex = 6;
-            this.buttonDatabase.Text = "Access Database";
+            this.buttonDatabase.Text = "Database Viewer";
             this.buttonDatabase.UseVisualStyleBackColor = false;
             this.buttonDatabase.Click += new System.EventHandler(this.buttonDatabase_Click);
             // 

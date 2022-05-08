@@ -35,8 +35,6 @@
             this.buttonConfirm = new System.Windows.Forms.Button();
             this.textBoxInputWebsite = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.checkBoxShowDetails = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +42,7 @@
             // 
             this.buttonClearData.BackColor = System.Drawing.Color.White;
             this.buttonClearData.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonClearData.Location = new System.Drawing.Point(6, 36);
+            this.buttonClearData.Location = new System.Drawing.Point(6, 86);
             this.buttonClearData.Name = "buttonClearData";
             this.buttonClearData.Size = new System.Drawing.Size(202, 32);
             this.buttonClearData.TabIndex = 1;
@@ -56,7 +54,7 @@
             // 
             this.buttonChangePassword.BackColor = System.Drawing.Color.White;
             this.buttonChangePassword.Font = new System.Drawing.Font("Myanmar Text", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonChangePassword.Location = new System.Drawing.Point(6, 83);
+            this.buttonChangePassword.Location = new System.Drawing.Point(6, 36);
             this.buttonChangePassword.Name = "buttonChangePassword";
             this.buttonChangePassword.Size = new System.Drawing.Size(202, 32);
             this.buttonChangePassword.TabIndex = 2;
@@ -81,8 +79,6 @@
             this.groupBox1.Controls.Add(this.buttonConfirm);
             this.groupBox1.Controls.Add(this.textBoxInputWebsite);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.checkBoxShowDetails);
             this.groupBox1.Controls.Add(this.buttonSignOut);
             this.groupBox1.Controls.Add(this.buttonChangePassword);
             this.groupBox1.Controls.Add(this.buttonClearData);
@@ -122,25 +118,6 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Favourite Website:";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 139);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 29);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Show Person Details:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // checkBoxShowDetails
-            // 
-            this.checkBoxShowDetails.AutoSize = true;
-            this.checkBoxShowDetails.Location = new System.Drawing.Point(193, 144);
-            this.checkBoxShowDetails.Name = "checkBoxShowDetails";
-            this.checkBoxShowDetails.Size = new System.Drawing.Size(15, 14);
-            this.checkBoxShowDetails.TabIndex = 3;
-            this.checkBoxShowDetails.UseVisualStyleBackColor = true;
-            // 
             // UserSettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,8 +141,6 @@
         private System.Windows.Forms.Button buttonChangePassword;
         private System.Windows.Forms.Button buttonSignOut;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.CheckBox checkBoxShowDetails;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxInputWebsite;
         private System.Windows.Forms.Button buttonConfirm;

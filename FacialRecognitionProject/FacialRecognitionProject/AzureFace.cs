@@ -249,7 +249,7 @@ namespace FacialRecognitionProject
 
             foreach (var similarResult in similarResults)
             {
-                MessageBox.Show($"Faces from {sourceImageFileName} & ID:{similarResult.FaceId} are similar with confidence: {similarResult.Confidence}.");
+                MessageBox.Show($"Faces from {sourceImageFileName} & ID:{similarResult.FaceId} are similar with confidence: {similarResult.Confidence*100}%");
             }
         }
         

@@ -81,6 +81,8 @@ namespace FacialRecognitionProject
         {
             //ALWAYS USE CAUTION BEFORE CLEARING THE DATASETS
             //Read in JSON files to be deleted
+
+            MessageBox.Show("Database clearing now in progress. Backup files can be found in the C:/Users/Alex/Desktop/COMP3000/ directory");
             using (StreamReader r = new StreamReader("C:/Users/Alex/Desktop/COMP3000/DatabasePeople.json"))
             {
                 string json = r.ReadToEnd();

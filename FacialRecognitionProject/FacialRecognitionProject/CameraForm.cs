@@ -65,7 +65,7 @@ namespace FacialRecognitionProject
             //By using threading the AzureFace class can be run without stopping the Camera form
             await Task.Run(() => FaceAI.AzureMain(textBoxInputTarget.Text));
             //Display outputted information to the user
-            pictureBoxImage.ImageLocation = $"{FaceAI.CurrentPersonURL}";
+            pictureBoxImage.ImageLocation = FaceAI.CurrentPersonURL;
             textBoxName.Text = FaceAI.CurrentPersonName;
             textBoxDescription.Text = FaceAI.CurrentPersonDescription;
             textBoxImageName.Text = FaceAI.CurrentPersonImageName;
